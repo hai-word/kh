@@ -135,13 +135,36 @@
   display: inline-block;
 }
 
+.search-bar {
+    position: relative;
+}
+
 .search-bar .search-input{
     width: 200px;
     height: 34px;
     border-radius: 17px;
     border: 1px solid #999999;
     box-sizing: border-box;
-    padding: 0 10px; /* 内容距边框 10px */
+    padding: 0 42px 0 10px; /* 左10px内容距边，右留出竖线+箭头 */
+}
+
+.search-divider {
+    position: absolute;
+    right: 34px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 16px;
+    border: 1px solid #999999;
+}
+
+.search-chevron {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 10px;
+    width: auto;
 }
 
 .carousel {
