@@ -247,9 +247,14 @@
 }
 
 .hero-title {
-    width: 290px;
-    height: 40px;
-    margin: 48px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 45px auto;
+}
+
+.hero-text {
     font-family: PingFangSC, "PingFang SC";
     font-weight: 300;
     font-size: 40px;
@@ -257,4 +262,22 @@
     line-height: 40px;
     text-align: center;
     font-style: normal;
+    white-space: nowrap;
+}
+
+.hero-dot {
+    display: inline-block;
+    background: #0C5BF5;
+    border-radius: 50%;
+}
+
+.hero-dot.big {
+    width: 14px;
+    height: 14px;
+}
+
+.hero-dot.small {
+    width: 10px;
+    height: 10px;
+    opacity: 0.6;
 }
