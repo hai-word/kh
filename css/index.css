@@ -421,10 +421,26 @@
 }
 
 .badge-panel {
+    position: relative;
     width: 1200px;
     height: 478px;
     margin-top: -10px; /* 对齐白徽标底边（白80高，蓝90高，蓝多出10） */
     background: #EBF4FF;
+}
+
+.panel-title {
+    position: absolute;
+    left: 143px;
+    top: 60px;
+    width: 96px;
+    height: 24px;
+    font-family: PingFangSC, "PingFang SC";
+    font-weight: 500;
+    font-size: 24px;
+    color: #1662F5;
+    line-height: 24px;
+    text-align: center;
+    font-style: normal;
 }
 
 .blue-badge-box {
