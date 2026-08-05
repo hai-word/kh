@@ -102,13 +102,11 @@
     width: auto;
     vertical-align: middle;
     margin-left: 5px;
-    opacity: 0;
-    transition: opacity 0.2s, transform 0.2s;
+    transition: transform 0.2s;
 }
 
 .dropdown:hover .nav-ai-arrow,
 .dropdown:focus-within .nav-ai-arrow {
-    opacity: 1;
     transform: rotate(180deg);
 }
 
