@@ -303,8 +303,16 @@
 }
 
 .feature-card {
+    position: relative;
     width: 580px;
     height: 155px;
+}
+
+.feature-card .robot {
+    position: absolute;
+    left: 83px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .feature-card.blue {
