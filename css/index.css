@@ -98,8 +98,8 @@
 
 /* AI智能 悬停时右侧显示下箭头图片 */
 .nav-ai-arrow {
-    height: 12px;
-    width: auto;
+    width: 15px;
+    height: 9px;
     vertical-align: middle;
     margin-left: 5px;
     transition: transform 0.2s;
