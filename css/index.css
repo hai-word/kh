@@ -282,10 +282,15 @@
     opacity: 0.6;
 }
 
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
 .feature-card {
     width: 580px;
     height: 155px;
-    margin: 0 auto;
 }
 
 .feature-card.blue {
@@ -296,5 +301,4 @@
 .feature-card.orange {
     background: #FFF8F4;
     box-shadow: inset 8px 8px 24px 0px rgba(249, 122, 71, 0.18);
-    margin-top: 40px;
 }
