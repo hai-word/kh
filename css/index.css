@@ -379,13 +379,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
 }
 
 .bg-title-row {
     display: flex;
     align-items: center;
     gap: 23px; /* 与 hero 标题圆点间距一致 */
+    margin-bottom: 20px;
 }
 
 .bg-title {
@@ -404,6 +404,7 @@
 .bg-subtitle {
     width: 446px;
     height: 20px;
+    margin-bottom: 30px; /* 与下方徽标间距 */
     font-family: PingFangSC, "PingFang SC";
     font-weight: 500;
     font-size: 20px;
@@ -412,4 +413,9 @@
     text-align: center;
     font-style: normal;
     white-space: nowrap;
+}
+
+.bg-badges {
+    display: flex;
+    align-items: center;
 }
