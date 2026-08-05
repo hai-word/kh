@@ -10,6 +10,17 @@
     var carousel = document.querySelector('.carousel');
     var indicators = document.querySelectorAll('.indicator');
 
+    // 背景区块内容按设计稿 1920px 基准等比缩放，跟随区块宽度
+    var bgSection = document.querySelector('.background-section');
+    var bgContent = document.querySelector('.bg-content');
+    function scaleBg() {
+        if (!bgSection || !bgContent) return;
+        var s = bgSection.clientWidth / 1920;
+        bgContent.style.transform = 'scale(' + s + ')';
+    }
+    scaleBg();
+    window.addEventListener('resize', scaleBg);
+
     // null 守卫，元素缺失直接退出
     if (!track || !prevBtn || !nextBtn || !track.children.length) return;
 

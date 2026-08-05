@@ -371,6 +371,15 @@
     background-repeat: no-repeat;
 }
 
+.bg-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px; /* 设计稿基准宽 */
+    height: 767px;
+    transform-origin: 0 0; /* 左上角为缩放原点 */
+}
+
 .bg-title-wrap {
     position: absolute;
     top: 50px;
