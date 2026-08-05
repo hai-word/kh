@@ -422,5 +422,12 @@
 
 .bg-badges img {
     height: 40px;
-    width: auto;
+}
+
+.bg-badges .blue-badge {
+    width: 400px;
+}
+
+.bg-badges .white-badge {
+    width: 90px;
 }
