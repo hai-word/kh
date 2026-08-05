@@ -315,6 +315,11 @@
     transform: translateY(-50%);
 }
 
+.feature-card .blue-robot {
+    width: 111px;
+    height: 111px;
+}
+
 .feature-card.blue {
     background: #EEF5FF;
     box-shadow: inset 8px 8px 24px 0px rgba(71, 150, 249, 0.18);
