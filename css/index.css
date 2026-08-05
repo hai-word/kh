@@ -430,11 +430,11 @@
     background: #EBF4FF;
 }
 
-.opt-title {
+.badge-panel .opt-title {
     top: 165px; /* 距面板顶 165px */
 }
 
-.opt-divider {
+.badge-panel .opt-divider {
     top: 230px;
 }
 
