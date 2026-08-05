@@ -22,3 +22,8 @@ input, textarea {
     -webkit-user-select: text;
     user-select: text;
 }
+
+/* 图片禁止拖动 */
+img {
+    -webkit-user-drag: none;
+}
