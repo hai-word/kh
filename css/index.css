@@ -431,7 +431,11 @@
 }
 
 .optimize-panel {
-    margin-top: 165px; /* 距上方面板 165px */
+    position: relative;
+    width: 1200px;
+    height: 478px;
+    margin: 165px auto 0; /* 独立面板，居中，距背景区块 165px */
+    background: #EBF4FF;
 }
 
 .panel-title {
