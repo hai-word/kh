@@ -245,3 +245,16 @@
 .indicator.active {
     background: #444546;
 }
+
+.hero-title {
+    width: 290px;
+    height: 40px;
+    margin: 48px auto;
+    font-family: PingFangSC, "PingFang SC";
+    font-weight: 300;
+    font-size: 40px;
+    color: #333333;
+    line-height: 40px;
+    text-align: center;
+    font-style: normal;
+}
