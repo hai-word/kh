@@ -417,7 +417,7 @@
 
 .bg-badges {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* 上边对齐 */
 }
 
 .bg-badges img {
