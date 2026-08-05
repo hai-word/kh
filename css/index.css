@@ -371,11 +371,17 @@
     background-repeat: no-repeat;
 }
 
-.bg-title {
+.bg-title-wrap {
     position: absolute;
     top: 50px;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bg-title {
     width: 196px;
     height: 40px;
     font-family: PingFangSC, "PingFang SC";
