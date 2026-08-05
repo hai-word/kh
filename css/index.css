@@ -418,6 +418,8 @@
 .bg-badges {
     display: flex;
     align-items: flex-start; /* 上边对齐 */
+    position: relative;
+    z-index: 2; /* 徽标层压在上面的大面板之上 */
 }
 
 .badge-panel {
