@@ -15,12 +15,18 @@
     var bgContent = document.querySelector('.bg-content');
     function scaleBg() {
         if (!bgSection || !bgContent) return;
-        var s = bgSection.clientWidth / 1920;
-        // 盒子已静态居中，仅绕水平中心等比缩放，任何尺寸都居中
+        // visualViewport.scale = 浏览器缩放倍数（Ctrl+滚轮）
+        // 用它反推未缩放宽度，缩放时 s 不变，不抵消浏览器缩放
+        var zoom = window.visualViewport ? window.visualViewport.scale : 1;
+        var width = window.innerWidth / zoom;
+        var s = width / 1920;
         bgContent.style.transform = 'scale(' + s + ')';
     }
     scaleBg();
     window.addEventListener('resize', scaleBg);
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', scaleBg);
+    }
 
     // null 守卫，元素缺失直接退出
     if (!track || !prevBtn || !nextBtn || !track.children.length) return;
