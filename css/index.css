@@ -375,9 +375,10 @@
     position: absolute;
     top: 0;
     left: 50%;
+    margin-left: -960px; /* 1920/2，静态水平居中 */
     width: 1920px; /* 设计稿基准宽 */
     height: 767px;
-    transform-origin: 0 0; /* 缩放原点：box 左上角，translate 后即区块水平中心 */
+    transform-origin: 50% 0; /* 绕盒子水平中心缩放，任何尺寸都居中 */
 }
 
 .bg-title-wrap {
