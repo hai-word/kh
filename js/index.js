@@ -16,8 +16,6 @@
     var pos = 0;                         // 视觉位置 0..total-1
     var timer = null;
     var hovering = false;
-    var snapTimer = null;
-    var TRANSITION_MS = 400;             // 与 CSS .carousel-track transition 时长一致
 
     function setTransform() {
         track.style.transform = 'translateX(-' + (pos * 100) + '%)';
@@ -34,26 +32,19 @@
         syncIndicators();
     }
 
-    function cancelSnap() {
-        if (snapTimer) {
-            clearTimeout(snapTimer);
-            snapTimer = null;
-        }
-    }
-
-    // 带动画移动到 p；到克隆位置时动画结束后隐形回到真实第一张
+    // 带动画移动到 p
     function animateTo(p) {
-        cancelSnap();
         pos = p;
         setTransform();
         syncIndicators();
-        if (pos === total - 1) {
-            snapTimer = setTimeout(function () {
-                snapTo(0);
-                snapTimer = null;
-            }, TRANSITION_MS);
-        }
     }
+
+    // 滑到克隆图动画真实结束时，隐形切回真实第一张
+    // transitionend 对齐过渡完成帧，比 setTimeout 精确，无跳变
+    track.addEventListener('transitionend', function (e) {
+        if (e.propertyName !== 'transform') return;
+        if (pos === total - 1) snapTo(0);
+    });
 
     function syncIndicators() {
         var logical = pos >= realCount ? 0 : pos;
@@ -64,21 +55,18 @@
 
     // 下一张：真实最后一张 → 克隆（滑过去）；克隆 → 真实第一张（隐形）
     function goNext() {
-        cancelSnap();
         if (pos === total - 1) snapTo(0);
         animateTo(Math.min(pos + 1, total - 1));
     }
 
     // 上一张：真实第一张 → 克隆（隐形）；然后滑回前一张
     function goPrev() {
-        cancelSnap();
         if (pos === 0) snapTo(total - 1);
         animateTo(Math.max(pos - 1, 0));
     }
 
     // 指示器跳转：克隆位置先隐形回真实第一张
     function goTo(i) {
-        cancelSnap();
         if (pos === total - 1) snapTo(0);
         animateTo(i);
     }
