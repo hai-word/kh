@@ -16,7 +16,8 @@
     function scaleBg() {
         if (!bgSection || !bgContent) return;
         var s = bgSection.clientWidth / 1920;
-        bgContent.style.transform = 'scale(' + s + ')';
+        // 先水平居中，再以居中位置为锚点等比缩放，跟随背景图居中缩放
+        bgContent.style.transform = 'translateX(-50%) scale(' + s + ')';
     }
     scaleBg();
     window.addEventListener('resize', scaleBg);
