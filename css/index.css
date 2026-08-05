@@ -282,6 +282,20 @@
     opacity: 0.6;
 }
 
+.hero-subtitle {
+    width: 620px;
+    height: 20px;
+    margin: 0 auto 40px;
+    font-family: PingFangSC, "PingFang SC";
+    font-weight: 500;
+    font-size: 20px;
+    color: #0959F5;
+    line-height: 20px;
+    text-align: center;
+    font-style: normal;
+    white-space: nowrap;
+}
+
 .feature-cards {
     display: flex;
     justify-content: center;
