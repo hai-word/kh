@@ -250,7 +250,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 23px;
     margin: 45px auto;
 }
 
@@ -280,4 +280,21 @@
     width: 10px;
     height: 10px;
     opacity: 0.6;
+}
+
+.feature-card {
+    width: 580px;
+    height: 155px;
+    margin: 0 auto;
+}
+
+.feature-card.blue {
+    background: #EEF5FF;
+    box-shadow: inset 8px 8px 24px 0px rgba(71, 150, 249, 0.18);
+}
+
+.feature-card.orange {
+    background: #FFF8F4;
+    box-shadow: inset 8px 8px 24px 0px rgba(249, 122, 71, 0.18);
+    margin-top: 40px;
 }
