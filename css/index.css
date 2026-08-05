@@ -96,23 +96,18 @@
     visibility: visible;
 }
 
-/* AI智能 悬停时右侧显示小三角箭头 */
-.nav-ai-intelligence::after {
-    content: '';
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 6px solid currentColor;
-    margin-left: 5px;
+/* AI智能 悬停时右侧显示下箭头图片 */
+.nav-ai-arrow {
+    height: 12px;
+    width: auto;
     vertical-align: middle;
+    margin-left: 5px;
     opacity: 0;
     transition: opacity 0.2s, transform 0.2s;
 }
 
-.dropdown:hover .nav-ai-intelligence::after,
-.dropdown:focus-within .nav-ai-intelligence::after {
+.dropdown:hover .nav-ai-arrow,
+.dropdown:focus-within .nav-ai-arrow {
     opacity: 1;
     transform: rotate(180deg);
 }
