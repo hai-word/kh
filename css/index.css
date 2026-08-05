@@ -434,9 +434,9 @@
 
 .blue-badge-text {
     position: absolute;
-    top: 50%;
+    top: 17px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     text-align: center;
     color: #ffffff;
     white-space: nowrap;
@@ -457,6 +457,7 @@
 .blue-badge-desc {
     width: 154px;
     height: 14px;
+    margin-top: 10px;
     font-family: PingFangSC, "PingFang SC";
     font-weight: 500;
     font-size: 14px;
