@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+
+}
+/* 默认无下划线 */
+a {
+  text-decoration: none;
+  color: #2266cc;
+}
+
+body {
+    margin: 0; /* 清除浏览器默认的 8px 边距 */
+    width: 100%;
+    overflow-x: hidden; /* 防止出现横向滚动条 */
+}
