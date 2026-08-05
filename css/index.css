@@ -371,6 +371,15 @@
     background-repeat: no-repeat;
 }
 
+.bg-line {
+    position: absolute;
+    left: 360px;
+    top: 260px;
+    width: 8px;
+    height: 105px;
+    background: #409EFF;
+}
+
 .bg-title-wrap {
     position: absolute;
     top: 50px;
