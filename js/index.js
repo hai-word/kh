@@ -43,6 +43,12 @@
         el.addEventListener('click', function () {
             show(parseInt(el.dataset.index, 10));
         });
+        el.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                show(parseInt(el.dataset.index, 10));
+            }
+        });
     });
 
     // 首屏激活态同步（index 初始为 0，show(0) 仅同步 active 类）
