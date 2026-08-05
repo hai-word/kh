@@ -10,33 +10,6 @@
     var carousel = document.querySelector('.carousel');
     var indicators = document.querySelectorAll('.indicator');
 
-    // 设计稿内容按 1920px 基准等比缩放，跟随窗口宽度
-    var bgSection = document.querySelector('.background-section');
-    var bgContent = document.querySelector('.bg-content');
-    var heroContent = document.querySelector('.hero-content');
-    var scaleS = window.innerWidth / 1920;
-    var lastDPR = window.devicePixelRatio;
-
-    function applyScale() {
-        if (!bgContent) return;
-        bgContent.style.transform = 'scale(' + scaleS + ')';
-        if (heroContent) heroContent.style.transform = 'scale(' + scaleS + ')';
-    }
-
-    function scaleBg() {
-        var dpr = window.devicePixelRatio;
-        if (Math.abs(dpr - lastDPR) > 0.001) {
-            // Ctrl+滚轮缩放：dPR 变了，保持 s 不变，让浏览器缩放生效（不抵消）
-            lastDPR = dpr;
-            return;
-        }
-        // 真窗口缩放：重算 s，内容跟背景走
-        scaleS = window.innerWidth / 1920;
-        applyScale();
-    }
-    applyScale();
-    window.addEventListener('resize', scaleBg);
-
     // null 守卫，元素缺失直接退出
     if (!track || !prevBtn || !nextBtn || !track.children.length) return;
 
