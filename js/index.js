@@ -10,11 +10,12 @@
     var count = track.children.length;
     var index = 0;
 
-    function show(i) {
+    function show(i, instant) {
         var next = ((i % count) + count) % count;
-        // 首尾 wrap 时禁用 transition 瞬间跳转，避免整排反向扫过
+        // 首尾 wrap 时禁用 transition 瞬间跳转，避免整排反向扫过。
+        // 仅箭头相邻切换跨边界用（instant=true）；指示器直接点击永远带动画
         var isWrap = (index === count - 1 && next === 0) || (index === 0 && next === count - 1);
-        if (isWrap) {
+        if (isWrap && instant) {
             track.style.transition = 'none';
             void track.offsetWidth; // 强制 reflow
             track.style.transform = 'translateX(-' + (next * 100) + '%)';
@@ -32,25 +33,25 @@
     }
 
     nextBtn.addEventListener('click', function () {
-        show(index + 1);
+        show(index + 1, true);
     });
 
     prevBtn.addEventListener('click', function () {
-        show(index - 1);
+        show(index - 1, true);
     });
 
     indicators.forEach(function (el) {
         el.addEventListener('click', function () {
-            show(parseInt(el.dataset.index, 10));
+            show(parseInt(el.dataset.index, 10), false);
         });
         el.addEventListener('keydown', function (e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                show(parseInt(el.dataset.index, 10));
+                show(parseInt(el.dataset.index, 10), false);
             }
         });
     });
 
     // 首屏激活态同步（index 初始为 0，show(0) 仅同步 active 类）
-    show(0);
+    show(0, false);
 })();
