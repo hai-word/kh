@@ -420,14 +420,12 @@
     align-items: flex-start; /* 上边对齐 */
 }
 
-.bg-badges img {
-    height: 40px;
-}
-
 .bg-badges .blue-badge {
     width: 400px;
+    height: 400px;
 }
 
 .bg-badges .white-badge {
     width: 90px;
+    height: 90px;
 }
