@@ -520,3 +520,11 @@
     text-align: center;
     font-style: normal;
 }
+
+.wb-second .white-badge-title {
+    width: 118px;
+}
+
+.wb-second .white-badge-desc {
+    width: 196px;
+}
