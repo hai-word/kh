@@ -66,11 +66,12 @@
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 120px;
+    min-width: 96px;
+    font-size: 14px;
     background: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
-    padding: 4px 0;
+    padding: 6px 0;
     list-style: none;
     opacity: 0;
     visibility: hidden;
@@ -79,7 +80,7 @@
 
 .dropdown-menu li a {
     display: block;
-    padding: 8px 16px;
+    padding: 6px 12px;
     color: #333;
     white-space: nowrap;
 }
@@ -93,6 +94,27 @@
 .dropdown:focus-within .dropdown-menu {
     opacity: 1;
     visibility: visible;
+}
+
+/* AI智能 悬停时右侧显示小三角箭头 */
+.nav-ai-intelligence::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid currentColor;
+    margin-left: 5px;
+    vertical-align: middle;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.dropdown:hover .nav-ai-intelligence::after,
+.dropdown:focus-within .nav-ai-intelligence::after {
+    opacity: 1;
+    transform: rotate(180deg);
 }
 
 .site-nav .nav-home{
@@ -177,5 +199,5 @@
 }
 
 .indicator.active {
-    background: #0C5BF5;
+    background: #444546;
 }
