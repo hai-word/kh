@@ -376,9 +376,14 @@
     top: 50px;
     left: 50%;
     transform: translateX(-50%);
+    width: 196px;
+    height: 40px;
     font-family: PingFangSC, "PingFang SC";
-    font-weight: 600;
-    font-size: 32px;
-    color: #ffffff;
+    font-weight: 300;
+    font-size: 40px;
+    color: #333333;
+    line-height: 40px;
+    text-align: center;
+    font-style: normal;
     white-space: nowrap;
 }
