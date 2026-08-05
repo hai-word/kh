@@ -423,6 +423,7 @@
 .badge-panel {
     width: 1200px;
     height: 478px;
+    margin-top: -10px; /* 对齐白徽标底边（白80高，蓝90高，蓝多出10） */
     background: #EBF4FF;
 }
 
