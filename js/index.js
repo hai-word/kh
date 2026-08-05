@@ -14,21 +14,28 @@
     var bgSection = document.querySelector('.background-section');
     var bgContent = document.querySelector('.bg-content');
     var heroContent = document.querySelector('.hero-content');
+    var scaleS = window.innerWidth / 1920;
+    var lastDPR = window.devicePixelRatio;
+
+    function applyScale() {
+        if (!bgContent) return;
+        bgContent.style.transform = 'scale(' + scaleS + ')';
+        if (heroContent) heroContent.style.transform = 'scale(' + scaleS + ')';
+    }
+
     function scaleBg() {
-        if (!bgSection || !bgContent) return;
-        // visualViewport.scale = 浏览器缩放倍数（Ctrl+滚轮）
-        // 用它反推未缩放宽度，缩放时 s 不变，不抵消浏览器缩放
-        var zoom = window.visualViewport ? window.visualViewport.scale : 1;
-        var width = window.innerWidth / zoom;
-        var s = width / 1920;
-        bgContent.style.transform = 'scale(' + s + ')';
-        if (heroContent) heroContent.style.transform = 'scale(' + s + ')';
+        var dpr = window.devicePixelRatio;
+        if (Math.abs(dpr - lastDPR) > 0.001) {
+            // Ctrl+滚轮缩放：dPR 变了，保持 s 不变，让浏览器缩放生效（不抵消）
+            lastDPR = dpr;
+            return;
+        }
+        // 真窗口缩放：重算 s，内容跟背景走
+        scaleS = window.innerWidth / 1920;
+        applyScale();
     }
-    scaleBg();
+    applyScale();
     window.addEventListener('resize', scaleBg);
-    if (window.visualViewport) {
-        window.visualViewport.addEventListener('resize', scaleBg);
-    }
 
     // null 守卫，元素缺失直接退出
     if (!track || !prevBtn || !nextBtn || !track.children.length) return;
