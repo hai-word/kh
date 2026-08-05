@@ -361,6 +361,7 @@
 }
 
 .background-section {
+    position: relative;
     width: 100%;
     height: 500px;
     margin-top: 50px;
@@ -368,4 +369,16 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.bg-title {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: PingFangSC, "PingFang SC";
+    font-weight: 600;
+    font-size: 32px;
+    color: #ffffff;
+    white-space: nowrap;
 }
