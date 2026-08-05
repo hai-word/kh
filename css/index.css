@@ -462,6 +462,7 @@
     width: 8px;
     height: 105px;
     background: #409EFF;
+    z-index: 2; /* 面板盖住线，提到面板上层 */
 }
 
 .blue-badge-text {
