@@ -136,35 +136,49 @@
 }
 
 .search-bar {
-    position: relative;
-}
-
-.search-bar .search-input{
-    width: 200px;
+    display: flex;
+    align-items: center;
+    width: 220px;
     height: 34px;
     border-radius: 17px;
     border: 1px solid #999999;
+    background: #fff;
     box-sizing: border-box;
-    padding: 0 42px 0 10px; /* 左10px内容距边，右留出竖线+箭头 */
+    padding-left: 10px; /* 内容距边框 10px */
+}
+
+.search-text {
+    font-family: PingFangSC, "PingFang SC";
+    font-size: 18px;
+    color: #333333;
+    white-space: nowrap;
 }
 
 .search-divider {
-    position: absolute;
-    right: 34px;
-    top: 50%;
-    transform: translateY(-50%);
     width: 1px;
     height: 16px;
     border: 1px solid #999999;
+    margin: 0 8px;
 }
 
 .search-chevron {
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
     height: 10px;
     width: auto;
+    margin-right: 8px;
+}
+
+.search-bar .search-input{
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: PingFangSC, "PingFang SC";
+    font-size: 18px;
+    color: #333333;
+    box-sizing: border-box;
+    padding: 0 10px 0 0;
 }
 
 .carousel {
