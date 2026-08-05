@@ -1,4 +1,9 @@
 (function () {
+    // 防止幽灵图像拖拽：所有图片禁止拖动
+    document.querySelectorAll('img').forEach(function (img) {
+        img.setAttribute('draggable', 'false');
+    });
+
     var track = document.querySelector('.carousel-track');
     var prevBtn = document.querySelector('.carousel-arrow.prev');
     var nextBtn = document.querySelector('.carousel-arrow.next');
