@@ -430,6 +430,10 @@
     background: #EBF4FF;
 }
 
+.optimize-panel {
+    margin-top: 165px; /* 距上方面板 165px */
+}
+
 .panel-title {
     position: absolute;
     left: 143px;
@@ -448,9 +452,10 @@
 .panel-divider {
     position: absolute;
     left: 8px;
-    top: 125px;
+    top: 124px;
     width: 373px;
-    height: 1px;
+    /* 不能按照蓝狐的高来，会出现孔隙 */
+    /* height: 1px; */   
     border: 1px solid;
     opacity: 0.51;
     border-image: linear-gradient(135deg, rgba(116, 205, 255, 1), rgba(64, 158, 255, 1)) 1 1;
@@ -471,7 +476,7 @@
 .blue-badge-box .bg-line {
     position: absolute;
     left: 0;
-    top: calc(100% + 21px); /* 蓝徽标下方 21px */
+    top: calc(100% + 10px); /* 蓝徽标下方 10px */
     width: 8px;
     height: 105px;
     background: #409EFF;
