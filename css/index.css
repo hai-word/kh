@@ -21,7 +21,12 @@
 
 .site-nav a {
     white-space: nowrap; /* 文字不换行 */
-    color: #181818a5;
+    font-family: PingFangSC, "PingFang SC";
+    font-weight: 400;
+    font-size: 18px;
+    color: #333333;
+    line-height: 18px;
+    font-style: normal;
 }
 
 .site-nav a:hover {
@@ -80,8 +85,15 @@
 
 .dropdown-menu li a {
     display: block;
-    padding: 6px 12px;
-    color: #333;
+    width: 53px;
+    height: 18px;
+    font-family: PingFangSC, "PingFang SC";
+    font-weight: 400;
+    font-size: 18px;
+    color: #333333;
+    line-height: 18px;
+    text-align: center;
+    font-style: normal;
     white-space: nowrap;
 }
 
