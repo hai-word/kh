@@ -2,6 +2,7 @@
     var track = document.querySelector('.carousel-track');
     var prevBtn = document.querySelector('.carousel-arrow.prev');
     var nextBtn = document.querySelector('.carousel-arrow.next');
+    var indicators = document.querySelectorAll('.indicator');
 
     // null 守卫，元素缺失直接退出
     if (!track || !prevBtn || !nextBtn || !track.children.length) return;
@@ -23,6 +24,11 @@
             track.style.transform = 'translateX(-' + (next * 100) + '%)';
         }
         index = next;
+
+        // 同步指示器激活态
+        indicators.forEach(function (el) {
+            el.classList.toggle('active', parseInt(el.dataset.index, 10) === index);
+        });
     }
 
     nextBtn.addEventListener('click', function () {
@@ -31,5 +37,11 @@
 
     prevBtn.addEventListener('click', function () {
         show(index - 1);
+    });
+
+    indicators.forEach(function (el) {
+        el.addEventListener('click', function () {
+            show(parseInt(el.dataset.index, 10));
+        });
     });
 })();
