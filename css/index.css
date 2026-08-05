@@ -420,9 +420,40 @@
     align-items: flex-start; /* 上边对齐 */
 }
 
-.bg-badges .blue-badge {
+.blue-badge-box {
+    position: relative;
     width: 400px;
     height: 90px;
+}
+
+.blue-badge-box .blue-badge {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.blue-badge-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.blue-badge-title {
+    font-family: PingFangSC, "PingFang SC";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.blue-badge-desc {
+    font-family: PingFangSC, "PingFang SC";
+    font-size: 14px;
+    line-height: 20px;
+    opacity: 0.85;
 }
 
 .bg-badges .white-badge {
