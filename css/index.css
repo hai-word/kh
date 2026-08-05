@@ -443,6 +443,17 @@
     font-style: normal;
 }
 
+.panel-divider {
+    position: absolute;
+    left: 143px;
+    top: 125px;
+    width: 373px;
+    height: 1px;
+    border: 1px solid;
+    opacity: 0.51;
+    border-image: linear-gradient(135deg, rgba(116, 205, 255, 1), rgba(64, 158, 255, 1)) 1 1;
+}
+
 .blue-badge-box {
     position: relative;
     width: 400px;
