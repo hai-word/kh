@@ -246,6 +246,12 @@
     background: #444546;
 }
 
+.hero-content {
+    width: 1920px; /* 与背景区块同基准，随窗口等比缩放 */
+    margin: 0 auto;
+    transform-origin: 50% 0;
+}
+
 .hero-title {
     display: flex;
     align-items: center;

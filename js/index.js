@@ -10,9 +10,10 @@
     var carousel = document.querySelector('.carousel');
     var indicators = document.querySelectorAll('.indicator');
 
-    // 背景区块内容按设计稿 1920px 基准等比缩放，跟随区块宽度
+    // 设计稿内容按 1920px 基准等比缩放，跟随窗口宽度
     var bgSection = document.querySelector('.background-section');
     var bgContent = document.querySelector('.bg-content');
+    var heroContent = document.querySelector('.hero-content');
     function scaleBg() {
         if (!bgSection || !bgContent) return;
         // visualViewport.scale = 浏览器缩放倍数（Ctrl+滚轮）
@@ -21,6 +22,7 @@
         var width = window.innerWidth / zoom;
         var s = width / 1920;
         bgContent.style.transform = 'scale(' + s + ')';
+        if (heroContent) heroContent.style.transform = 'scale(' + s + ')';
     }
     scaleBg();
     window.addEventListener('resize', scaleBg);
