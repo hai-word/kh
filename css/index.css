@@ -320,6 +320,23 @@
     height: 111px;
 }
 
+.blue-card-title {
+    position: absolute;
+    left: 220px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 140px;
+    height: 20px;
+    font-family: PingFangSC, "PingFang SC";
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
+    line-height: 20px;
+    text-align: center;
+    font-style: normal;
+    white-space: nowrap;
+}
+
 .feature-card.blue {
     background: #EEF5FF;
     box-shadow: inset 8px 8px 24px 0px rgba(71, 150, 249, 0.18);
