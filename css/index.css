@@ -377,6 +377,13 @@
     left: 50%;
     transform: translateX(-50%);
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.bg-title-row {
+    display: flex;
     align-items: center;
     gap: 23px; /* 与 hero 标题圆点间距一致 */
 }
@@ -389,6 +396,19 @@
     font-size: 40px;
     color: #333333;
     line-height: 40px;
+    text-align: center;
+    font-style: normal;
+    white-space: nowrap;
+}
+
+.bg-subtitle {
+    width: 446px;
+    height: 20px;
+    font-family: PingFangSC, "PingFang SC";
+    font-weight: 500;
+    font-size: 20px;
+    color: #0959F5;
+    line-height: 20px;
     text-align: center;
     font-style: normal;
     white-space: nowrap;
