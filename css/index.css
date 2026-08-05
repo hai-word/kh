@@ -371,15 +371,6 @@
     background-repeat: no-repeat;
 }
 
-.bg-line {
-    position: absolute;
-    left: 360px;
-    top: 260px;
-    width: 8px;
-    height: 105px;
-    background: #409EFF;
-}
-
 .bg-title-wrap {
     position: absolute;
     top: 50px;
@@ -439,6 +430,15 @@
     width: 100%;
     height: 100%;
     display: block;
+}
+
+.blue-badge-box .bg-line {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 21px); /* 蓝徽标下方 21px */
+    width: 8px;
+    height: 105px;
+    background: #409EFF;
 }
 
 .blue-badge-text {
