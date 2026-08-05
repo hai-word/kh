@@ -430,6 +430,7 @@
     width: 100%;
     height: 100%;
     display: block;
+    pointer-events: none; /* 防止被鼠标拖走 */
 }
 
 .blue-badge-text {
@@ -483,6 +484,7 @@
     width: 100%;
     height: 100%;
     display: block;
+    pointer-events: none; /* 防止被鼠标拖走 */
 }
 
 .white-badge-text {
