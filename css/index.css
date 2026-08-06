@@ -475,7 +475,9 @@
 
 .footer-bar {
     width: 1920px;
-    margin: 50px auto 0; /* 居中，距合作图 50px */
+    margin: 50px 0 0;
+    margin-left: 50%;
+    transform: translateX(-50%); /* 任意窗口宽度都居中 */
     background: #0C5BF5;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
 }
