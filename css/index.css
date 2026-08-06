@@ -432,12 +432,16 @@
 
 .coop-link {
     margin: 50px auto 0; /* 页面级居中，距背景区块 50px */
+    width: 160px;
+    height: 40px;
     font-family: PingFangSC, "PingFang SC";
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: 300;
+    font-size: 40px;
     color: #333333;
-    white-space: nowrap;
+    line-height: 40px;
     text-align: center;
+    font-style: normal;
+    white-space: nowrap;
 }
 
 .badge-panel .opt-title {
