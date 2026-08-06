@@ -466,23 +466,14 @@
     display: none;
 }
 
-/* 面板切换动画：新淡入上滑，旧淡出 */
+/* 面板切换动画：新面板淡入上滑 */
 .panel-section.section-in {
     animation: sectionIn 0.4s ease;
-}
-
-.panel-section.section-out {
-    animation: sectionOut 0.3s ease;
 }
 
 @keyframes sectionIn {
     from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes sectionOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
 }
 
 .coop-link-wrap {

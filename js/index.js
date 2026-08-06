@@ -135,24 +135,17 @@
                         : './img/backage-wrhite.svg';
                 }
             });
-            // 面板内容区随选中徽标切换（交叉淡入淡出）
+            // 面板内容区随选中徽标切换（旧立即隐藏，新淡入，避免闪屏）
             var secName = box.getAttribute('data-section') || 'resume';
             var targetSection = document.querySelector('.section-' + secName);
             document.querySelectorAll('.badge-panel .panel-section').forEach(function (s) {
-                if (s === targetSection) {
-                    s.classList.remove('hidden');
-                    s.classList.remove('section-in');
-                    void s.offsetWidth; // 重置动画
-                    s.classList.add('section-in');
-                } else if (!s.classList.contains('hidden')) {
-                    s.classList.add('section-out');
-                    var old = s;
-                    setTimeout(function () {
-                        old.classList.add('hidden');
-                        old.classList.remove('section-out');
-                    }, 300);
-                }
+                s.classList.toggle('hidden', s !== targetSection);
             });
+            if (targetSection) {
+                targetSection.classList.remove('section-in');
+                void targetSection.offsetWidth; // 重置动画
+                targetSection.classList.add('section-in');
+            }
             // 选中徽标对应视频
             var videoIdxMap = { resume: 0, interview: 2, career: 3 };
             var secVideo = document.querySelector('.section-' + secName + ' .video-player');
