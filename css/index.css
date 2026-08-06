@@ -438,6 +438,31 @@
     top: 230px;
 }
 
+.video-window {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 780px;
+    height: 438px;
+    background: #1b1b1b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-play {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
 .panel-title {
     position: absolute;
     left: 143px;
