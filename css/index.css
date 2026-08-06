@@ -430,8 +430,15 @@
     background: #EBF4FF;
 }
 
-.coop-link {
+.coop-link-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 23px;
     margin: 50px auto 0; /* 页面级居中，距背景区块 50px */
+}
+
+.coop-link {
     width: 160px;
     height: 40px;
     font-family: PingFangSC, "PingFang SC";
