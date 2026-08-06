@@ -473,6 +473,14 @@
 .coop-logos img:nth-child(4) { margin-right: 37px; }
 .coop-logos img:nth-child(5) { margin-right: 37px; }
 
+.footer-bar {
+    width: 1920px;
+    height: 150px;
+    margin: 40px auto 0; /* 居中，距合作图 40px */
+    background: #0C5BF5;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
 .badge-panel .opt-title {
     top: 165px; /* 距面板顶 165px */
     color: #333333;;
