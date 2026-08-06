@@ -751,7 +751,8 @@
 .badge-interview, .badge-career { height: 90px; }
 .badge-interview .badge, .badge-career .badge {
     height: 90px;
-    /* object-fit: cover; 蓝图保持比例填满 */
+    object-fit: none;      /* 白图保持原大小80，蓝图90原生填满 */
+    object-position: top;  /* 白图顶上边框，底部留空 */
 }
 
 .badge-box .bg-line {
