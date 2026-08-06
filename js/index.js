@@ -25,11 +25,19 @@
             }, 1000);
         });
         btn.addEventListener('click', function () {
-            // 随机颜色渐变
-            var r = Math.floor(Math.random() * 256);
-            var g = Math.floor(Math.random() * 256);
-            var b = Math.floor(Math.random() * 256);
-            btn.style.background = 'rgb(' + r + ',' + g + ',' + b + ')';
+            // 多色扇形渐变：每色一块、硬边界不融合
+            var n = 6;
+            var stops = [];
+            for (var i = 0; i < n; i++) {
+                var r = Math.floor(Math.random() * 256);
+                var g = Math.floor(Math.random() * 256);
+                var b = Math.floor(Math.random() * 256);
+                var c = 'rgb(' + r + ',' + g + ',' + b + ')';
+                var start = (i / n * 100).toFixed(2) + '%';
+                var end = ((i + 1) / n * 100).toFixed(2) + '%';
+                stops.push(c + ' ' + start + ' ' + end);
+            }
+            btn.style.background = 'conic-gradient(' + stops.join(', ') + ')';
             // 图标果冻抖动
             img.classList.remove('jelly');
             void img.offsetWidth; // 重置动画
