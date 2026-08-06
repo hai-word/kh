@@ -495,10 +495,15 @@
 }
 
 .footer-nav a {
-    color: white;
+    color: #FFFFFF;
     text-decoration: none;
     margin: 0 15px;
+    font-family: SourceHanSansSC, "Source Han Sans SC";
+    font-weight: 400;
     font-size: 14px;
+    line-height: 14px;
+    text-align: left;
+    font-style: normal;
 }
 
 .footer-nav a:hover {
