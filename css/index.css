@@ -579,7 +579,7 @@
     align-items: center;
     justify-content: center;
     gap: 9px; /* 图标与文字间距 */
-    transition: background 0.2s;
+    transition: background 0.4s; /* 点击随机色渐变用 */
 }
 
 .float-btn:hover {
@@ -588,6 +588,18 @@
 
 .float-btn:hover span {
     color: #FFFFFF;
+}
+
+/* 点击后图标果冻抖动 */
+@keyframes jelly {
+    0%, 100% { transform: scale(1, 1); }
+    25% { transform: scale(1.3, 0.7); }
+    50% { transform: scale(0.7, 1.3); }
+    75% { transform: scale(1.15, 0.85); }
+}
+
+.float-btn img.jelly {
+    animation: jelly 0.5s ease;
 }
 
 .float-btn img {

@@ -4,7 +4,7 @@
         img.setAttribute('draggable', 'false');
     });
 
-    // 悬浮框 hover 切换 -01 图标
+    // 悬浮框 hover 切换 -01 图标 + 点击随机色渐变 + 图标果冻抖动
     document.querySelectorAll('.float-btn').forEach(function (btn) {
         var img = btn.querySelector('img');
         if (!img) return;
@@ -15,6 +15,17 @@
         });
         btn.addEventListener('mouseleave', function () {
             img.src = base;
+        });
+        btn.addEventListener('click', function () {
+            // 随机颜色渐变
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            btn.style.background = 'rgb(' + r + ',' + g + ',' + b + ')';
+            // 图标果冻抖动
+            img.classList.remove('jelly');
+            void img.offsetWidth; // 重置动画
+            img.classList.add('jelly');
         });
     });
 
