@@ -363,7 +363,7 @@
 .background-section {
     position: relative;
     width: 100%;
-    aspect-ratio: 1920 / 767; /* 按图片比例完整显示，不裁切 */
+    height: 767px; /* 固定 767 高 */
     margin-top: 50px;
     background-image: url('../img/backage-01.png');
     background-size: cover;
