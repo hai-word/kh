@@ -682,6 +682,13 @@
     background: #000;
 }
 
+/* 面试面板视频：居中 */
+.interview-video {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+}
+
 .cta-box {
     position: absolute;
     top: 311px;
@@ -762,7 +769,7 @@
 .section-resume .bg-line {
     position: absolute;
     left: 0;
-    top: 10px; /* 与之前 badge底部+10px 一致 */
+    top: 21px; /* 与之前 badge底部+10px 一致 */
     width: 8px;
     height: 105px;
     background: #409EFF;
@@ -771,7 +778,7 @@
 }
 
 .section-resume .bg-line.opt {
-    top: 116px; /* 与之前 badge底部+116px 一致 */
+    top: 127px; /* 与之前 badge底部+116px 一致 */
 }
 
 /* 位置切换时触发一次移动动画 */

@@ -140,6 +140,13 @@
             document.querySelectorAll('.badge-panel .panel-section').forEach(function (s) {
                 s.classList.toggle('hidden', !s.classList.contains('section-' + secName));
             });
+            // 选中徽标对应视频
+            var videoIdxMap = { resume: 0, interview: 2, career: 3 };
+            var secVideo = document.querySelector('.section-' + secName + ' .video-player');
+            if (secVideo && window.VIDEOS && window.VIDEOS[videoIdxMap[secName]] &&
+                window.VIDEOS[videoIdxMap[secName]].src) {
+                secVideo.src = window.VIDEOS[videoIdxMap[secName]].src;
+            }
         });
     });
 
