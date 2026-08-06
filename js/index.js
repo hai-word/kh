@@ -10,6 +10,12 @@
     var carousel = document.querySelector('.carousel');
     var indicators = document.querySelectorAll('.indicator');
 
+    // 视频窗口加载配置里的第一个视频地址
+    var videoPlayer = document.querySelector('.video-player');
+    if (videoPlayer && window.VIDEOS && window.VIDEOS.length && window.VIDEOS[0].src) {
+        videoPlayer.src = window.VIDEOS[0].src;
+    }
+
     // null 守卫，元素缺失直接退出
     if (!track || !prevBtn || !nextBtn || !track.children.length) return;
 
