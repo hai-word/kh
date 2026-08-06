@@ -653,7 +653,6 @@
 
 .badge-panel .opt-title {
     top: 165px; /* 距面板顶 165px */
-    color: #333333;;
 }
 
 .badge-panel .opt-divider {
@@ -709,10 +708,15 @@
     font-family: PingFangSC, "PingFang SC";
     font-weight: 500;
     font-size: 24px;
-    color: #1662F5;
+    color: #333333; /* 未选中灰 */
     line-height: 24px;
     text-align: center;
     font-style: normal;
+    cursor: pointer;
+}
+
+.panel-title.active {
+    color: #1662F5; /* 选中蓝 */
 }
 
 .panel-divider {

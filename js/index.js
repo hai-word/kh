@@ -121,6 +121,23 @@
         videoPlayer.src = window.VIDEOS[0].src;
     }
 
+    // 面板标题点击：互换激活态 + 切换对应视频
+    var panelTitles = document.querySelectorAll('.badge-panel .panel-title');
+    function activatePanel(title) {
+        panelTitles.forEach(function (t) {
+            t.classList.toggle('active', t === title);
+        });
+        var idx = title.classList.contains('opt-title') ? 1 : 0;
+        if (videoPlayer && window.VIDEOS && window.VIDEOS[idx] && window.VIDEOS[idx].src) {
+            videoPlayer.src = window.VIDEOS[idx].src;
+        }
+    }
+    panelTitles.forEach(function (t) {
+        t.addEventListener('click', function () {
+            activatePanel(t);
+        });
+    });
+
     // null 守卫，元素缺失直接退出
     if (!track || !prevBtn || !nextBtn || !track.children.length) return;
 
