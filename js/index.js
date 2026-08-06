@@ -10,11 +10,19 @@
         if (!img) return;
         var base = img.getAttribute('src').replace(/\.png$/i, '.png');
         var hoverSrc = base.replace(/\.png$/i, '-01.png');
+        var resetTimer = null;
         btn.addEventListener('mouseenter', function () {
             img.src = hoverSrc;
+            if (resetTimer) { clearTimeout(resetTimer); resetTimer = null; }
         });
         btn.addEventListener('mouseleave', function () {
             img.src = base;
+            // 移开 1 秒后恢复未点击样式
+            if (resetTimer) { clearTimeout(resetTimer); resetTimer = null; }
+            resetTimer = setTimeout(function () {
+                btn.style.background = '';
+                resetTimer = null;
+            }, 1000);
         });
         btn.addEventListener('click', function () {
             // 随机颜色渐变
