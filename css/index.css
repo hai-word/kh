@@ -702,6 +702,12 @@
     right: auto;
     transform: translateX(-50%);
     top: 477px; /* 视频 20+438+19 */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.cta-box.interview-cta.show {
+    opacity: 1;
 }
 
 .cta-box {

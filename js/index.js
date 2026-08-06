@@ -152,6 +152,16 @@
             if (badgePanel) {
                 badgePanel.classList.toggle('panel-interview', secName === 'interview');
             }
+            // 面试按钮：等面板变长完成后淡入
+            var interviewCta = document.querySelector('.cta-box.interview-cta');
+            if (interviewCta) {
+                interviewCta.classList.remove('show');
+                if (secName === 'interview') {
+                    setTimeout(function () {
+                        interviewCta.classList.add('show');
+                    }, 300);
+                }
+            }
         });
     });
 
