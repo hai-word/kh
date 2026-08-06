@@ -742,8 +742,8 @@
 }
 
 .blue-badge-box .blue-badge {
-    width: 100%;
-    height: 100%;
+    width: 400px;
+    height: 90px;
     display: block;
 }
 
@@ -815,8 +815,8 @@
 }
 
 .white-badge-box .white-badge {
-    width: 100%;
-    height: 100%;
+    width: 400px;
+    height: 90px;
     display: block;
 }
 
