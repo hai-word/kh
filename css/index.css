@@ -390,7 +390,7 @@
 .background-section {
     position: relative;
     width: 100%;
-    height: 767px; /* 固定 767 高 */
+    height: 846px; /* 固定 846 高 */
     margin-top: 50px;
     background-image: url('../img/backage-01.png');
     background-size: cover;
@@ -455,6 +455,11 @@
     height: 478px;
     margin-top: -10px; /* 对齐白徽标底边（白80，蓝90，蓝多出10） */
     background: #EBF4FF;
+    transition: height 0.3s;
+}
+
+.badge-panel.panel-interview {
+    height: 557px; /* 选中 AI面试题 时 */
 }
 
 .hidden {

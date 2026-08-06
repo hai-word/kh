@@ -147,6 +147,11 @@
                 window.VIDEOS[videoIdxMap[secName]].src) {
                 secVideo.src = window.VIDEOS[videoIdxMap[secName]].src;
             }
+            // 面板高度随选中徽标变化（面试 557px）
+            var badgePanel = document.querySelector('.badge-panel');
+            if (badgePanel) {
+                badgePanel.classList.toggle('panel-interview', secName === 'interview');
+            }
         });
     });
 
