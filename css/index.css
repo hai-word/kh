@@ -173,7 +173,8 @@
     margin-right: 8px;
 }
 
-/* 输入时隐藏竖线和箭头，不占位 */
+/* 输入时隐藏文字、竖线和箭头，不占位 */
+.search-bar:focus-within .search-text,
 .search-bar:focus-within .search-divider,
 .search-bar:focus-within .search-chevron {
     display: none;
