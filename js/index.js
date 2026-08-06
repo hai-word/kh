@@ -4,13 +4,34 @@
         img.setAttribute('draggable', 'false');
     });
 
-    // 悬浮框 hover 切换 -01 图标 + 点击随机色渐变 + 图标果冻抖动
+    // 生成 n 个随机颜色
+    function getRandomColors(n) {
+        var arr = [];
+        for (var i = 0; i < n; i++) {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            arr.push('rgb(' + r + ',' + g + ',' + b + ')');
+        }
+        return arr;
+    }
+
+    // 悬浮框：hover 换 -01 图标；点击 canvas 画随机形状 + 换底色 + 果冻
     document.querySelectorAll('.float-btn').forEach(function (btn) {
         var img = btn.querySelector('img');
+        var canvas = btn.querySelector('.float-canvas');
+        var ctx = canvas ? canvas.getContext('2d') : null;
         if (!img) return;
         var base = img.getAttribute('src').replace(/\.png$/i, '.png');
         var hoverSrc = base.replace(/\.png$/i, '-01.png');
         var resetTimer = null;
+
+        function clearCanvas() {
+            if (ctx) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+
         btn.addEventListener('mouseenter', function () {
             img.src = hoverSrc;
             if (resetTimer) { clearTimeout(resetTimer); resetTimer = null; }
@@ -20,24 +41,67 @@
             // 移开 1 秒后恢复未点击样式
             if (resetTimer) { clearTimeout(resetTimer); resetTimer = null; }
             resetTimer = setTimeout(function () {
-                btn.style.background = '';
+                btn.style.backgroundColor = '';
+                clearCanvas();
                 resetTimer = null;
             }, 1000);
         });
         btn.addEventListener('click', function () {
-            // 多色线条：横向色条、硬边界不融合
-            var n = 6;
-            var stops = [];
-            for (var i = 0; i < n; i++) {
-                var r = Math.floor(Math.random() * 256);
-                var g = Math.floor(Math.random() * 256);
-                var b = Math.floor(Math.random() * 256);
-                var c = 'rgb(' + r + ',' + g + ',' + b + ')';
-                var start = (i / n * 100).toFixed(2) + '%';
-                var end = ((i + 1) / n * 100).toFixed(2) + '%';
-                stops.push(c + ' ' + start + ' ' + end);
+            if (!ctx) return;
+            // 1. 随机颜色数组
+            var colors = getRandomColors(8);
+            // 2. 清空画布
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            // 3. 绘制 100 个随机形状
+            for (var i = 0; i < 100; i++) {
+                var color = colors[Math.floor(Math.random() * colors.length)];
+                ctx.fillStyle = color;
+                ctx.globalAlpha = Math.random() * 0.8 + 0.2; // 随机透明度
+                var shapeType = Math.floor(Math.random() * 4);
+                var cw = canvas.width;
+                var ch = canvas.height;
+                if (shapeType === 0) {
+                    // 圆形
+                    var cx = Math.random() * cw;
+                    var cy = Math.random() * ch;
+                    var radius = Math.random() * 60 + 10;
+                    ctx.beginPath();
+                    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+                    ctx.fill();
+                } else if (shapeType === 1) {
+                    // 矩形
+                    ctx.fillRect(Math.random() * cw, Math.random() * ch, Math.random() * 100 + 20, Math.random() * 100 + 20);
+                } else if (shapeType === 2) {
+                    // 三角形
+                    ctx.beginPath();
+                    ctx.moveTo(Math.random() * cw, Math.random() * ch);
+                    ctx.lineTo(Math.random() * cw, Math.random() * ch);
+                    ctx.lineTo(Math.random() * cw, Math.random() * ch);
+                    ctx.closePath();
+                    ctx.fill();
+                } else {
+                    // 多边形
+                    var px = Math.random() * cw;
+                    var py = Math.random() * ch;
+                    var pr = Math.random() * 50 + 20;
+                    var sides = Math.floor(Math.random() * 5) + 3;
+                    ctx.beginPath();
+                    for (var j = 0; j < sides; j++) {
+                        var ang = (j / sides) * Math.PI * 2;
+                        var sx = px + Math.cos(ang) * pr;
+                        var sy = py + Math.sin(ang) * pr;
+                        if (j === 0) { ctx.moveTo(sx, sy); } else { ctx.lineTo(sx, sy); }
+                    }
+                    ctx.closePath();
+                    ctx.fill();
+                }
             }
-            btn.style.background = 'linear-gradient(180deg, ' + stops.join(', ') + ')';
+            // 4. 重置透明度
+            ctx.globalAlpha = 1;
+            // 5. 改变方块颜色
+            var squareColor = getRandomColors(1);
+            btn.style.backgroundColor = squareColor[0];
             // 图标果冻抖动
             img.classList.remove('jelly');
             void img.offsetWidth; // 重置动画

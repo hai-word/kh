@@ -580,6 +580,22 @@
     justify-content: center;
     gap: 9px; /* 图标与文字间距 */
     transition: background 0.4s; /* 点击随机色渐变用 */
+    overflow: hidden; /* 剪裁 canvas 到圆角框内 */
+}
+
+.float-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.float-btn img,
+.float-btn span {
+    position: relative;
+    z-index: 1;
 }
 
 .float-btn:hover {
