@@ -759,23 +759,23 @@
     object-position: top;  /* 白图顶上边框，底部留空 */
 }
 
-.badge-box .bg-line {
+.section-resume .bg-line {
     position: absolute;
     left: 0;
-    top: calc(100% + 10px); /* 简历智写 选中位置 */
+    top: 60px; /* 对齐 简历智写 标题 */
     width: 8px;
     height: 105px;
     background: #409EFF;
-    z-index: 2; /* 面板盖住线，提到面板上层 */
+    z-index: 2;
     transition: top 0.4s ease-in-out; /* 选中切换平滑移动 */
 }
 
-.badge-box .bg-line.opt {
-    top: calc(100% + 116px); /* 简历优化 选中位置 */
+.section-resume .bg-line.opt {
+    top: 165px; /* 对齐 简历优化 标题 */
 }
 
 /* 位置切换时触发一次移动动画 */
-.badge-box .bg-line.animate {
+.section-resume .bg-line.animate {
     animation: bgLineMove 0.8s ease-in-out;
 }
 
