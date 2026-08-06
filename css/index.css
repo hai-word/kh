@@ -453,7 +453,7 @@
     position: relative;
     width: 1200px;
     height: 478px;
-    margin-top: 0; /* 徽标统一 90px 高，面板紧贴下方 */
+    margin-top: -10px; /* 对齐白徽标底边（白80高，蓝90高，蓝多出10） */
     background: #EBF4FF;
 }
 
@@ -745,7 +745,6 @@
     width: 400px;
     height: 90px;
     display: block;
-    object-fit: fill; /* 拉伸填满，防 svg 留边 */
 }
 
 .blue-badge-box .bg-line {
@@ -812,14 +811,13 @@
 .white-badge-box {
     position: relative;
     width: 400px;
-    height: 90px; /* 与蓝徽标等高，切换选中不改变布局 */
+    height: 80px; /* 白徽标原高度 */
 }
 
 .white-badge-box .white-badge {
     width: 400px;
-    height: 90px;
+    height: 80px;
     display: block;
-    object-fit: fill; /* 拉伸填满，防 svg 留边 */
 }
 
 .white-badge-text {
