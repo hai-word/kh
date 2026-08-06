@@ -578,7 +578,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 9px; /* 图标与文字间距 */
 }
 
 .float-btn img {
