@@ -811,12 +811,12 @@
 .white-badge-box {
     position: relative;
     width: 400px;
-    height: 90px; /* 白svg已改90高，原生等高 */
+    height: 90px; /* 容器与蓝徽标等高 */
 }
 
 .white-badge-box .white-badge {
     width: 400px;
-    height: 90px;
+    height: 80px; /* 图保持原大小，不拉伸 */
     display: block;
 }
 

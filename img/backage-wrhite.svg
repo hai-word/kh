@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="400px" height="90px" viewBox="0 0 400 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="400px" height="80px" viewBox="0 0 400 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>矩形备份 3</title>
     <defs>
-        <rect id="path-1" x="760" y="1095" width="400" height="90"></rect>
+        <rect id="path-1" x="760" y="1095" width="400" height="80"></rect>
         <filter x="-4.0%" y="-20.0%" width="108.0%" height="140.0%" filterUnits="objectBoundingBox" id="filter-2">
             <feGaussianBlur stdDeviation="12" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
             <feOffset dx="8" dy="8" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
