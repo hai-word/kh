@@ -514,6 +514,7 @@
     margin-bottom: 20px;
     font-size: 12px;
     line-height: 1.6;
+    word-spacing: 24px; /* 文字段间距 */
 }
 
 .footer-copyright {
@@ -525,7 +526,7 @@
     height: 14px;
     width: auto;
     vertical-align: text-bottom; /* 底部对齐文字框底 */
-    margin: 1px 0 1px 12px; /* 左边距加大，与许可证文字分开 */
+    margin: 1px 0 1px 14px; /* 左边距加大，与许可证文字分开 */
 }
 
 .badge-panel .opt-title {
