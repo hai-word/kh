@@ -511,11 +511,7 @@
 }
 
 .footer-info {
-    width: 555px;
-    margin: 0 auto 20px;
-    display: flex;
-    justify-content: space-between; /* 4 段均分 */
-    align-items: baseline;
+    margin-bottom: 20px;
     font-size: 12px;
     line-height: 1.6;
 }
@@ -529,7 +525,7 @@
     height: 14px;
     width: auto;
     vertical-align: text-bottom; /* 底部对齐文字框底 */
-    margin: 1px 4px 1px 0; /* 与"鲁公网"文字小间隙，段间距由均分控制 */
+    margin: 1px 4px 1px 12px; /* 与前后文字间隙 */
 }
 
 .badge-panel .opt-title {
