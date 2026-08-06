@@ -687,13 +687,13 @@
     background: #000;
 }
 
-/* 面试面板视频：居中、缩小 */
+/* 面试面板视频：居中 */
 .interview-video {
     left: 50%;
     right: auto;
     transform: translateX(-50%);
-    width: 700px;
-    height: 394px;
+    width: 780px;
+    height: 438px;
 }
 
 /* 面试按钮：视频下方 10px 居中（高特异性，压过 .cta-box 默认定位） */
@@ -701,7 +701,7 @@
     left: 50%;
     right: auto;
     transform: translateX(-50%);
-    top: 433px; /* 视频 20+394+19 */
+    top: 477px; /* 视频 20+438+19 */
 }
 
 .cta-box {
