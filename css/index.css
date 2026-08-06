@@ -431,7 +431,7 @@
 }
 
 .coop-link {
-    margin-top: 50px; /* 面板下方 50px */
+    margin: 50px auto 0; /* 页面级居中，距背景区块 50px */
     font-family: PingFangSC, "PingFang SC";
     font-weight: 400;
     font-size: 16px;
