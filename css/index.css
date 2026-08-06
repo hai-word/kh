@@ -696,8 +696,8 @@
     height: 394px;
 }
 
-/* 面试按钮：视频下方 10px 居中 */
-.interview-cta {
+/* 面试按钮：视频下方 10px 居中（高特异性，压过 .cta-box 默认定位） */
+.cta-box.interview-cta {
     left: 50%;
     right: auto;
     transform: translateX(-50%);
