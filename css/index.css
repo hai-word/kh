@@ -575,13 +575,22 @@
     border-radius: 8px;
     border: 1px solid #1662F5;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2px;
 }
 
 .float-btn img {
-    max-width: 44px;
-    max-height: 44px;
+    max-width: 34px;
+    max-height: 30px;
+}
+
+.float-btn span {
+    font-size: 10px;
+    color: #333333;
+    line-height: 14px;
+    white-space: nowrap;
 }
 
 .float-btn-top {
