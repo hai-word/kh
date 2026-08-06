@@ -135,6 +135,14 @@
   display: inline-block;
 }
 
+.nav-ai-intelligence img {
+  /* AI智能 图标与文字对齐 */
+  height: 16px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .search-bar {
     display: flex;
     align-items: center;
