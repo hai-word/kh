@@ -1,6 +1,12 @@
 /* 移动端样式 */
 /* 依赖 js 给 body 加的 is-mobile / is-pc 类 */
 
+/* 限制左右滑动：只允许纵向滚动 */
+body.is-mobile {
+    overflow-x: hidden;
+    touch-action: pan-y;
+}
+
 .mobile-only {
     display: none;
 }

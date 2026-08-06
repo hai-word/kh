@@ -23,4 +23,21 @@
     }
     detectDevice();
     window.addEventListener('resize', detectDevice);
+
+    // 兜底：禁止水平滑动（纵向滑动保留）
+    var startX = null;
+    var startY = null;
+    document.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+    }, { passive: true });
+    document.addEventListener('touchmove', function (e) {
+        if (startX === null) return;
+        var dx = e.touches[0].clientX - startX;
+        var dy = e.touches[0].clientY - startY;
+        // 水平位移大于垂直且超过阈值 → 阻止
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+            e.preventDefault();
+        }
+    }, { passive: false });
 })();
