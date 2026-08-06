@@ -819,6 +819,11 @@
     height: 80px;
 }
 
+/* 选中时变蓝底，高度对齐蓝徽标 90px */
+.white-badge-box.selected {
+    height: 90px;
+}
+
 .white-badge-box .white-badge {
     width: 100%;
     height: 100%;
