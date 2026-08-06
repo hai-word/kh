@@ -121,7 +121,7 @@
         videoPlayer.src = window.VIDEOS[0].src;
     }
 
-    // 徽标点击：互换选中态（选中=蓝图，未选中=白图）
+    // 徽标点击：互换选中态（选中=蓝图，未选中=白图）+ 切换面板内容区
     var badgeBoxes = document.querySelectorAll('.blue-badge-box, .white-badge-box');
     badgeBoxes.forEach(function (box) {
         box.addEventListener('click', function () {
@@ -134,6 +134,11 @@
                         ? './img/backage-blue.svg'
                         : './img/backage-wrhite.svg';
                 }
+            });
+            // 面板内容区随选中徽标切换
+            var secName = box.getAttribute('data-section') || 'resume';
+            document.querySelectorAll('.badge-panel .panel-section').forEach(function (s) {
+                s.classList.toggle('hidden', !s.classList.contains('section-' + secName));
             });
         });
     });

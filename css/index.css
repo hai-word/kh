@@ -457,6 +457,10 @@
     background: #EBF4FF;
 }
 
+.hidden {
+    display: none;
+}
+
 .coop-link-wrap {
     display: flex;
     align-items: center;
