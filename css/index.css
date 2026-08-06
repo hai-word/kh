@@ -466,6 +466,17 @@
     height: 60px;
     background: linear-gradient(90deg, #F08B13 0%, rgba(251, 68, 62, 0.82) 100%);
     border-radius: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: PingFangSC, "PingFang SC";
+    font-weight: 500;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 20px;
+    text-align: center;
+    font-style: normal;
+    white-space: nowrap;
 }
 
 .panel-title {
