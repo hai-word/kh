@@ -526,8 +526,16 @@
 }
 
 .footer-copyright {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.8);
+    width: 394px;
+    height: 14px;
+    margin: 0 auto;
+    font-family: SourceHanSansSC, "Source Han Sans SC";
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 14px;
+    text-align: left;
+    font-style: normal;
 }
 
 .footer-icp-img {
