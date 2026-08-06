@@ -4,6 +4,20 @@
         img.setAttribute('draggable', 'false');
     });
 
+    // 悬浮框 hover 切换 -01 图标
+    document.querySelectorAll('.float-btn').forEach(function (btn) {
+        var img = btn.querySelector('img');
+        if (!img) return;
+        var base = img.getAttribute('src').replace(/\.png$/i, '.png');
+        var hoverSrc = base.replace(/\.png$/i, '-01.png');
+        btn.addEventListener('mouseenter', function () {
+            img.src = hoverSrc;
+        });
+        btn.addEventListener('mouseleave', function () {
+            img.src = base;
+        });
+    });
+
     var track = document.querySelector('.carousel-track');
     var prevBtn = document.querySelector('.carousel-arrow.prev');
     var nextBtn = document.querySelector('.carousel-arrow.next');
