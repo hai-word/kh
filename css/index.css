@@ -524,9 +524,7 @@
 .footer-icp-img {
     height: 16px;
     width: auto;
-    vertical-align: middle;
-    position: relative;
-    top: -2px; /* 微调上移 */
+    vertical-align: baseline; /* 底部与文字基线对齐 */
     margin: 0 4px;
 }
 
