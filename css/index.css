@@ -574,6 +574,14 @@
     background: #FFFFFF;
     border-radius: 8px;
     border: 1px solid #1662F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.float-btn img {
+    max-width: 44px;
+    max-height: 44px;
 }
 
 .float-btn-top {
