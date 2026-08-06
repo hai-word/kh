@@ -745,6 +745,7 @@
     width: 400px;
     height: 90px;
     display: block;
+    object-fit: fill; /* 拉伸填满，防 svg 留边 */
 }
 
 .blue-badge-box .bg-line {
@@ -818,6 +819,7 @@
     width: 400px;
     height: 90px;
     display: block;
+    object-fit: fill; /* 拉伸填满，防 svg 留边 */
 }
 
 .white-badge-text {
