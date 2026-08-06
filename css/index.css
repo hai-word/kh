@@ -432,6 +432,7 @@
 
 .badge-panel .opt-title {
     top: 165px; /* 距面板顶 165px */
+    color: #333333;;
 }
 
 .badge-panel .opt-divider {
@@ -455,6 +456,16 @@
     height: 100%;
     object-fit: cover;
     background: #000;
+}
+
+.cta-box {
+    position: absolute;
+    top: 311px;
+    left: 46px;
+    width: 330px;
+    height: 60px;
+    background: linear-gradient(90deg, #F08B13 0%, rgba(251, 68, 62, 0.82) 100%);
+    border-radius: 37px;
 }
 
 .panel-title {
