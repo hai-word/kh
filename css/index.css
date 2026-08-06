@@ -1,13 +1,3 @@
-.page-scale-host {
-    width: 100%;
-}
-
-.page-scale {
-    width: 1920px; /* 设计稿基准宽 */
-    margin: 0 auto;
-    transform-origin: 50% 0; /* 顶部居中缩放 */
-}
-
 .site-nav {
     position: relative;
     z-index: 10;

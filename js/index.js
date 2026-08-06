@@ -1,17 +1,4 @@
 (function () {
-    // 手机/窄屏适配：整页按 1920 基准等比缩放，桌面宽屏不放大
-    var pageHost = document.querySelector('.page-scale-host');
-    var pageScale = document.querySelector('.page-scale');
-    function scalePage() {
-        if (!pageHost || !pageScale) return;
-        var scale = Math.min(window.innerWidth / 1920, 1);
-        pageScale.style.transform = 'scale(' + scale + ')';
-        // transform 不影响布局高度，手动修正滚动高度
-        pageHost.style.height = (pageScale.offsetHeight * scale) + 'px';
-    }
-    scalePage();
-    window.addEventListener('resize', scalePage);
-
     // 防止幽灵图像拖拽：所有图片禁止拖动
     document.querySelectorAll('img').forEach(function (img) {
         img.setAttribute('draggable', 'false');
