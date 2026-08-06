@@ -476,7 +476,7 @@
 .footer-bar {
     width: 1920px;
     height: 150px;
-    margin: 40px auto 0; /* 居中，距合作图 40px */
+    margin: 50px auto 0; /* 居中，距合作图 50px */
     background: #0C5BF5;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
 }
