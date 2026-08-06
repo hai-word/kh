@@ -132,9 +132,12 @@
         if (videoPlayer && window.VIDEOS && window.VIDEOS[idx] && window.VIDEOS[idx].src) {
             videoPlayer.src = window.VIDEOS[idx].src;
         }
-        // bg-line 位置跟随选中
+        // bg-line 位置跟随选中 + 触发一次移动动画
         if (bgLine) {
             bgLine.classList.toggle('opt', idx === 1);
+            bgLine.classList.remove('animate');
+            void bgLine.offsetWidth; // 重置动画
+            bgLine.classList.add('animate');
         }
     }
     panelTitles.forEach(function (t) {

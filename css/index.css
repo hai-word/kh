@@ -746,7 +746,7 @@
 .blue-badge-box .bg-line {
     position: absolute;
     left: 0;
-    top: calc(100% + 116px); /* 简历智写 选中位置 */
+    top: calc(100% + 10px); /* 简历智写 选中位置 */
     width: 8px;
     height: 105px;
     background: #409EFF;
@@ -755,7 +755,17 @@
 }
 
 .blue-badge-box .bg-line.opt {
-    top: calc(100% + 221px); /* 简历优化 选中位置（下移105） */
+    top: calc(100% + 116px); /* 简历优化 选中位置 */
+}
+
+/* 位置切换时触发一次移动动画 */
+.blue-badge-box .bg-line.animate {
+    animation: bgLineMove 0.8s ease-in-out;
+}
+
+@keyframes bgLineMove {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 .blue-badge-text {
