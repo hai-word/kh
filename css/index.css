@@ -137,8 +137,8 @@
 
 .nav-ai-intelligence img {
   /* AI智能 图标与文字对齐 */
-  height: 16px;
-  width: auto;
+  width: 15px;
+  height: 9px;
   display: inline-block;
   vertical-align: middle;
 }
