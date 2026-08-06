@@ -746,11 +746,17 @@
 .blue-badge-box .bg-line {
     position: absolute;
     left: 0;
-    top: calc(100% + 10px); /* 蓝徽标下方 10px */
+    top: calc(100% + 116px);
     width: 8px;
     height: 105px;
     background: #409EFF;
     z-index: 2; /* 面板盖住线，提到面板上层 */
+    animation: bgLineMove 2s ease-in-out infinite; /* 慢→快→慢 */
+}
+
+@keyframes bgLineMove {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 .blue-badge-text {
