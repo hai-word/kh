@@ -121,6 +121,23 @@
         videoPlayer.src = window.VIDEOS[0].src;
     }
 
+    // 徽标点击：互换选中态（选中=蓝图，未选中=白图）
+    var badgeBoxes = document.querySelectorAll('.blue-badge-box, .white-badge-box');
+    badgeBoxes.forEach(function (box) {
+        box.addEventListener('click', function () {
+            badgeBoxes.forEach(function (b) { b.classList.remove('selected'); });
+            box.classList.add('selected');
+            badgeBoxes.forEach(function (b) {
+                var img = b.querySelector('.badge');
+                if (img) {
+                    img.src = b.classList.contains('selected')
+                        ? './img/backage-blue.svg'
+                        : './img/backage-wrhite.svg';
+                }
+            });
+        });
+    });
+
     // 面板标题点击：互换激活态 + 切换对应视频 + bg-line 位置
     var panelTitles = document.querySelectorAll('.badge-panel .panel-title');
     var bgLine = document.querySelector('.blue-badge-box .bg-line');

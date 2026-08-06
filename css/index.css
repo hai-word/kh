@@ -864,3 +864,14 @@
 .wb-second .white-badge-desc {
     width: 196px;
 }
+
+/* 徽标选中态：选中=蓝底白字，未选中=白底深字 */
+.white-badge-box.selected .white-badge-title,
+.white-badge-box.selected .white-badge-desc {
+    color: #FFFFFF;
+}
+
+.blue-badge-box:not(.selected) .blue-badge-title,
+.blue-badge-box:not(.selected) .blue-badge-desc {
+    color: #333333;
+}
