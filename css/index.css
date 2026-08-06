@@ -700,14 +700,15 @@
 .cta-box.interview-cta {
     left: 50%;
     right: auto;
-    transform: translateX(-50%);
     top: 477px; /* 视频 20+438+19 */
+    transform: translate(-50%, 12px); /* 初始下移 + 水平居中 */
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.5s, transform 0.5s;
 }
 
 .cta-box.interview-cta.show {
     opacity: 1;
+    transform: translate(-50%, 0); /* 上滑到位 */
 }
 
 .cta-box {
