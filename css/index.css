@@ -576,6 +576,10 @@
     border: 1px solid #1662F5;
 }
 
+.float-btn-top {
+    bottom: 160px; /* 上方 10px：80 + 70 + 10 */
+}
+
 .footer-icp-img {
     height: 14px;
     width: auto;
