@@ -121,8 +121,9 @@
         videoPlayer.src = window.VIDEOS[0].src;
     }
 
-    // 面板标题点击：互换激活态 + 切换对应视频
+    // 面板标题点击：互换激活态 + 切换对应视频 + bg-line 位置
     var panelTitles = document.querySelectorAll('.badge-panel .panel-title');
+    var bgLine = document.querySelector('.blue-badge-box .bg-line');
     function activatePanel(title) {
         panelTitles.forEach(function (t) {
             t.classList.toggle('active', t === title);
@@ -130,6 +131,10 @@
         var idx = title.classList.contains('opt-title') ? 1 : 0;
         if (videoPlayer && window.VIDEOS && window.VIDEOS[idx] && window.VIDEOS[idx].src) {
             videoPlayer.src = window.VIDEOS[idx].src;
+        }
+        // bg-line 位置跟随选中
+        if (bgLine) {
+            bgLine.classList.toggle('opt', idx === 1);
         }
     }
     panelTitles.forEach(function (t) {
