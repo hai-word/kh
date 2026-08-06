@@ -1,0 +1,22 @@
+/* 移动端样式 */
+/* 依赖 js 给 body 加的 is-mobile / is-pc 类 */
+
+.mobile-only {
+    display: none;
+}
+
+body.is-mobile > *:not(.mobile-only) {
+    display: none;
+}
+
+body.is-mobile .mobile-only {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: PingFangSC, "PingFang SC";
+    font-size: 80px;
+    font-weight: 700;
+    color: #0C5BF5;
+    writing-mode: vertical-rl; /* 竖排 */
+}
