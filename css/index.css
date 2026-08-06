@@ -489,7 +489,8 @@
 }
 
 .footer-nav {
-    margin-bottom: 20px;
+    width: 277.5px;
+    margin: 0 auto 20px;
 }
 
 .footer-nav a {
