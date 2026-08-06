@@ -145,7 +145,7 @@
 
     // 面板标题点击：互换激活态 + 切换对应视频 + bg-line 位置
     var panelTitles = document.querySelectorAll('.badge-panel .panel-title');
-    var bgLine = document.querySelector('.blue-badge-box .bg-line');
+    var bgLine = document.querySelector('.badge-resume .bg-line');
     function activatePanel(title) {
         panelTitles.forEach(function (t) {
             t.classList.toggle('active', t === title);
