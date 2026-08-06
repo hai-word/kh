@@ -431,15 +431,13 @@
 }
 
 .coop-link {
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 50px; /* 面板下方 50px */
     font-family: PingFangSC, "PingFang SC";
     font-weight: 400;
     font-size: 16px;
     color: #333333;
     white-space: nowrap;
+    text-align: center;
 }
 
 .badge-panel .opt-title {
