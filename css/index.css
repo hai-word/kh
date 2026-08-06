@@ -470,6 +470,27 @@
     display: none;
 }
 
+/* 移动端占位：竖排"手机端"，PC 隐藏 */
+.mobile-only {
+    display: none;
+}
+
+body.is-mobile > *:not(.mobile-only) {
+    display: none;
+}
+
+body.is-mobile .mobile-only {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: PingFangSC, "PingFang SC";
+    font-size: 80px;
+    font-weight: 700;
+    color: #0C5BF5;
+    writing-mode: vertical-rl; /* 竖排 */
+}
+
 /* 面板切换动画：新面板淡入上滑 */
 .panel-section.section-in {
     animation: sectionIn 0.4s ease;
