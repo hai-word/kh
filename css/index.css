@@ -135,6 +135,11 @@
   display: inline-block;
 }
 
+.nav-ai-intelligence {
+  position: relative;
+  top: -2px; /* 微调上移，与其它选项对齐 */
+}
+
 .nav-ai-intelligence img {
   /* AI智能 图标与文字对齐 */
   width: 15px;
