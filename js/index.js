@@ -1,4 +1,13 @@
 (function () {
+    // 移动端：PC 内容隐藏，跳过全部 PC 逻辑（视频/轮播/徽标等），零网络请求
+    var ua = navigator.userAgent || '';
+    var uaMobile = /Android|iPhone|iPod|iPad|Windows Phone|webOS|BlackBerry|Mobile|HarmonyOS/i.test(ua);
+    var touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    var coarse = !!(window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
+    if (window.innerWidth <= 768 || (uaMobile && touch) || (touch && coarse)) {
+        return;
+    }
+
     // 防止幽灵图像拖拽：所有图片禁止拖动
     document.querySelectorAll('img').forEach(function (img) {
         img.setAttribute('draggable', 'false');
