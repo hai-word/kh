@@ -453,7 +453,7 @@
     position: relative;
     width: 1200px;
     height: 478px;
-    margin-top: -10px; /* 对齐白徽标底边（白80高，蓝90高，蓝多出10） */
+    margin-top: 0; /* 徽标统一 90px 高，面板紧贴下方 */
     background: #EBF4FF;
 }
 
@@ -816,12 +816,7 @@
 .white-badge-box {
     position: relative;
     width: 400px;
-    height: 80px;
-}
-
-/* 选中时变蓝底，高度对齐蓝徽标 90px */
-.white-badge-box.selected {
-    height: 90px;
+    height: 90px; /* 与蓝徽标等高，切换选中不改变布局 */
 }
 
 .white-badge-box .white-badge {
