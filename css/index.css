@@ -451,6 +451,28 @@
     white-space: nowrap;
 }
 
+.coop-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1200px;
+    height: 66px;
+    margin: 30px auto 0; /* 距合作链接 30px */
+}
+
+.coop-logos img {
+    width: 169px;
+    height: 66px;
+    object-fit: contain;
+}
+
+/* 间距：1-2:37  2-3:37  3-4:38  4-5:37  5-6:37 */
+.coop-logos img:nth-child(1) { margin-right: 37px; }
+.coop-logos img:nth-child(2) { margin-right: 37px; }
+.coop-logos img:nth-child(3) { margin-right: 38px; }
+.coop-logos img:nth-child(4) { margin-right: 37px; }
+.coop-logos img:nth-child(5) { margin-right: 37px; }
+
 .badge-panel .opt-title {
     top: 165px; /* 距面板顶 165px */
     color: #333333;;
