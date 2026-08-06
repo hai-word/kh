@@ -580,6 +580,10 @@
     bottom: 160px; /* 上方 10px：80 + 70 + 10 */
 }
 
+.float-btn-top2 {
+    bottom: 240px; /* 再上方 10px：160 + 70 + 10 */
+}
+
 .footer-icp-img {
     height: 14px;
     width: auto;
