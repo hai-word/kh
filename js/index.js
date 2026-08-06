@@ -122,7 +122,7 @@
     }
 
     // 徽标点击：互换选中态（选中=蓝图，未选中=白图）+ 切换面板内容区
-    var badgeBoxes = document.querySelectorAll('.blue-badge-box, .white-badge-box');
+    var badgeBoxes = document.querySelectorAll('.badge-box');
     badgeBoxes.forEach(function (box) {
         box.addEventListener('click', function () {
             badgeBoxes.forEach(function (b) { b.classList.remove('selected'); });

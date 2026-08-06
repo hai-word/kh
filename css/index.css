@@ -735,19 +735,26 @@
     border-image: linear-gradient(135deg, rgba(116, 205, 255, 1), rgba(64, 158, 255, 1)) 1 1;
 }
 
-.blue-badge-box {
+.badge-box {
     position: relative;
     width: 400px;
-    height: 90px;
 }
 
-.blue-badge-box .blue-badge {
+.badge-box .badge {
     width: 400px;
-    height: 90px;
     display: block;
 }
 
-.blue-badge-box .bg-line {
+/* 尺寸：简历 90，面试/职场 80 */
+.badge-resume { height: 90px; }
+.badge-resume .badge { height: 90px; }
+.badge-interview, .badge-career { height: 80px; }
+.badge-interview .badge, .badge-career .badge {
+    height: 80px;
+    object-fit: cover; /* 蓝图保持比例填满 */
+}
+
+.badge-box .bg-line {
     position: absolute;
     left: 0;
     top: calc(100% + 10px); /* 简历智写 选中位置 */
@@ -758,12 +765,12 @@
     transition: top 0.4s ease-in-out; /* 选中切换平滑移动 */
 }
 
-.blue-badge-box .bg-line.opt {
+.badge-box .bg-line.opt {
     top: calc(100% + 116px); /* 简历优化 选中位置 */
 }
 
 /* 位置切换时触发一次移动动画 */
-.blue-badge-box .bg-line.animate {
+.badge-box .bg-line.animate {
     animation: bgLineMove 0.8s ease-in-out;
 }
 
@@ -772,106 +779,49 @@
     50% { transform: translateY(-10px); }
 }
 
-.blue-badge-text {
+.badge-text {
     position: absolute;
     top: 17px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    color: #ffffff;
     white-space: nowrap;
 }
 
-.blue-badge-title {
-    width: 117px;
+.badge-title {
     height: 24px;
     margin: 0 auto;
     font-family: PingFangSC, "PingFang SC";
     font-weight: 300;
     font-size: 24px;
-    color: #FFFFFF;
+    color: #333333; /* 未选中深字 */
     line-height: 24px;
     text-align: center;
     font-style: normal;
 }
 
-.blue-badge-desc {
-    width: 154px;
+.badge-desc {
     height: 14px;
     margin: 8px auto 0;
     font-family: PingFangSC, "PingFang SC";
     font-weight: 500;
     font-size: 14px;
-    color: #FFFFFF;
+    color: #666666; /* 未选中深字 */
     line-height: 14px;
     text-align: center;
     font-style: normal;
 }
 
-.white-badge-box {
-    position: relative;
-    width: 400px;
-    height: 80px; /* 白徽标原尺寸，选中只换地址不换尺寸 */
-}
+/* 各徽标标题/描述宽度 */
+.badge-resume .badge-title { width: 117px; }
+.badge-resume .badge-desc { width: 154px; }
+.badge-interview .badge-title { width: 142px; }
+.badge-interview .badge-desc { width: 168px; }
+.badge-career .badge-title { width: 118px; }
+.badge-career .badge-desc { width: 196px; }
 
-.white-badge-box .white-badge {
-    width: 400px;
-    height: 80px;
-    display: block;
-    object-fit: cover; /* 蓝图保持比例填满，不变形不缩宽 */
-}
-
-.white-badge-text {
-    position: absolute;
-    top: 17px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: #333333;
-    white-space: nowrap;
-}
-
-.white-badge-title {
-    width: 142px;
-    height: 24px;
-    margin: 0 auto;
-    font-family: PingFangSC, "PingFang SC";
-    font-weight: 300;
-    font-size: 24px;
-    color: #333333;
-    line-height: 24px;
-    text-align: center;
-    font-style: normal;
-}
-
-.white-badge-desc {
-    width: 168px;
-    height: 14px;
-    margin: 8px auto 0;
-    font-family: PingFangSC, "PingFang SC";
-    font-weight: 500;
-    font-size: 14px;
-    color: #666666;
-    line-height: 14px;
-    text-align: center;
-    font-style: normal;
-}
-
-.wb-second .white-badge-title {
-    width: 118px;
-}
-
-.wb-second .white-badge-desc {
-    width: 196px;
-}
-
-/* 徽标选中态：选中=蓝底白字，未选中=白底深字 */
-.white-badge-box.selected .white-badge-title,
-.white-badge-box.selected .white-badge-desc {
+/* 选中态：白字（背景图变蓝由 JS 换 src） */
+.badge-box.selected .badge-title,
+.badge-box.selected .badge-desc {
     color: #FFFFFF;
-}
-
-.blue-badge-box:not(.selected) .blue-badge-title,
-.blue-badge-box:not(.selected) .blue-badge-desc {
-    color: #333333;
 }
