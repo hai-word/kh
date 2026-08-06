@@ -568,7 +568,7 @@
 .float-btn {
     position: fixed;
     right: 60px;
-    bottom: 0;
+    bottom: 160px;
     width: 70px;
     height: 70px;
     background: #FFFFFF;
@@ -577,11 +577,11 @@
 }
 
 .float-btn-top {
-    bottom: 80px; /* 上方 10px：0 + 70 + 10 */
+    bottom: 240px; /* 上方 10px：160 + 70 + 10 */
 }
 
 .float-btn-top2 {
-    bottom: 160px; /* 再上方 10px：80 + 70 + 10 */
+    bottom: 320px; /* 再上方 10px：240 + 70 + 10 */
 }
 
 .footer-icp-img {
