@@ -525,7 +525,7 @@
     height: 14px;
     width: auto;
     vertical-align: text-bottom; /* 底部对齐文字框底 */
-    margin: 0 4px;
+    margin: 1px 0 1px 12px; /* 左边距加大，与许可证文字分开 */
 }
 
 .badge-panel .opt-title {
