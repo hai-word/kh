@@ -475,10 +475,41 @@
 
 .footer-bar {
     width: 1920px;
-    height: 150px;
     margin: 50px auto 0; /* 居中，距合作图 50px */
     background: #0C5BF5;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-nav {
+    margin-bottom: 20px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.footer-info {
+    margin-bottom: 20px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.footer-copyright {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .badge-panel .opt-title {
