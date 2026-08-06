@@ -25,7 +25,7 @@
             }, 1000);
         });
         btn.addEventListener('click', function () {
-            // 多色扇形渐变：每色一块、硬边界不融合
+            // 多色线条：横向色条、硬边界不融合
             var n = 6;
             var stops = [];
             for (var i = 0; i < n; i++) {
@@ -37,7 +37,7 @@
                 var end = ((i + 1) / n * 100).toFixed(2) + '%';
                 stops.push(c + ' ' + start + ' ' + end);
             }
-            btn.style.background = 'conic-gradient(' + stops.join(', ') + ')';
+            btn.style.background = 'linear-gradient(180deg, ' + stops.join(', ') + ')';
             // 图标果冻抖动
             img.classList.remove('jelly');
             void img.offsetWidth; // 重置动画
