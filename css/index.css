@@ -748,10 +748,11 @@
 /* 尺寸：简历 90，面试/职场 80 */
 .badge-resume { height: 90px; }
 .badge-resume .badge { height: 90px; }
-.badge-interview, .badge-career { height: 80px; }
+.badge-interview, .badge-career { height: 90px; }
 .badge-interview .badge, .badge-career .badge {
-    height: 80px;
-    object-fit: cover; /* 蓝图保持比例填满 */
+    height: 90px;
+    object-fit: none;      /* 白图保持原大小80，蓝图90原生刚好填满 */
+    object-position: top;  /* 顶部对齐，不露上边 */
 }
 
 .badge-box .bg-line {
