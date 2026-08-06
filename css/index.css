@@ -521,6 +521,13 @@
     color: rgba(255, 255, 255, 0.8);
 }
 
+.footer-icp-img {
+    height: 16px;
+    width: auto;
+    vertical-align: middle;
+    margin: 0 4px;
+}
+
 .badge-panel .opt-title {
     top: 165px; /* 距面板顶 165px */
     color: #333333;;
