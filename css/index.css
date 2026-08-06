@@ -762,7 +762,7 @@
 .section-resume .bg-line {
     position: absolute;
     left: 0;
-    top: 60px; /* 对齐 简历智写 标题 */
+    top: 10px; /* 与之前 badge底部+10px 一致 */
     width: 8px;
     height: 105px;
     background: #409EFF;
@@ -771,7 +771,7 @@
 }
 
 .section-resume .bg-line.opt {
-    top: 165px; /* 对齐 简历优化 标题 */
+    top: 116px; /* 与之前 badge底部+116px 一致 */
 }
 
 /* 位置切换时触发一次移动动画 */
