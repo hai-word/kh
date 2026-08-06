@@ -747,7 +747,11 @@
 
 /* 尺寸：简历 90，面试/职场 80 */
 .badge-resume { height: 90px; }
-.badge-resume .badge { height: 90px; }
+.badge-resume .badge {
+    height: 90px;
+    object-fit: none;
+    object-position: top; /* 白图顶上边框，蓝图原生填满 */
+}
 .badge-interview, .badge-career { height: 90px; }
 .badge-interview .badge, .badge-career .badge {
     height: 90px;
