@@ -818,6 +818,7 @@
     width: 400px;
     height: 80px;
     display: block;
+    object-fit: cover; /* 蓝图保持比例填满，不变形不缩宽 */
 }
 
 .white-badge-text {
