@@ -462,6 +462,10 @@
     height: 557px; /* 选中 AI面试题 时 */
 }
 
+.badge-panel.panel-career {
+    height: 557px; /* 选中 AI职场伴侣 时 */
+}
+
 .hidden {
     display: none;
 }
@@ -667,7 +671,7 @@
     height: 14px;
     width: auto;
     vertical-align: text-bottom; /* 底部对齐文字框底 */
-    margin: 1px 4px 1px 0; /* 与"鲁公网"文字小间隙，段间距由均分控制 */
+    margin: 1px 4px 2px 0; /* 与"鲁公网"文字小间隙，段间距由均分控制 */
 }
 
 .badge-panel .opt-title {
@@ -697,8 +701,8 @@
     background: #000;
 }
 
-/* 面试面板视频：居中 */
-.interview-video {
+/* 面试/职场面板视频：居中 */
+.centered-video {
     left: 50%;
     right: auto;
     transform: translateX(-50%);
@@ -707,7 +711,7 @@
 }
 
 /* 面试按钮：视频下方 10px 居中（高特异性，压过 .cta-box 默认定位） */
-.cta-box.interview-cta {
+.cta-box.centered-cta {
     left: 50%;
     right: auto;
     top: 477px; /* 视频 20+438+19 */
@@ -716,7 +720,7 @@
     transition: opacity 0.5s, transform 0.5s;
 }
 
-.cta-box.interview-cta.show {
+.cta-box.centered-cta.show {
     opacity: 1;
     transform: translate(-50%, 0); /* 上滑到位 */
 }

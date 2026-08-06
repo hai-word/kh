@@ -153,18 +153,21 @@
                 window.VIDEOS[videoIdxMap[secName]].src) {
                 secVideo.src = window.VIDEOS[videoIdxMap[secName]].src;
             }
-            // 面板高度随选中徽标变化（面试 557px）
+            // 面板高度随选中徽标变化（面试/职场 557px）
             var badgePanel = document.querySelector('.badge-panel');
             if (badgePanel) {
                 badgePanel.classList.toggle('panel-interview', secName === 'interview');
+                badgePanel.classList.toggle('panel-career', secName === 'career');
             }
-            // 面试按钮：等面板变长完成后淡入
-            var interviewCta = document.querySelector('.cta-box.interview-cta');
-            if (interviewCta) {
-                interviewCta.classList.remove('show');
-                if (secName === 'interview') {
+            // 面试/职场按钮：等面板变长完成后淡入
+            document.querySelectorAll('.cta-box.centered-cta').forEach(function (cta) {
+                cta.classList.remove('show');
+            });
+            if (secName === 'interview' || secName === 'career') {
+                var activeCta = document.querySelector('.section-' + secName + ' .cta-box.centered-cta');
+                if (activeCta) {
                     setTimeout(function () {
-                        interviewCta.classList.add('show');
+                        activeCta.classList.add('show');
                     }, 300);
                 }
             }
