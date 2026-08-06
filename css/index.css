@@ -453,7 +453,7 @@
     position: relative;
     width: 1200px;
     height: 478px;
-    margin-top: -10px; /* 对齐白徽标底边（白80高，蓝90高，蓝多出10） */
+    margin-top: 0; /* 徽标全 90 等高，面板紧贴下方 */
     background: #EBF4FF;
 }
 
@@ -811,12 +811,12 @@
 .white-badge-box {
     position: relative;
     width: 400px;
-    height: 80px; /* 白徽标原高度 */
+    height: 90px; /* 白svg已改90高，原生等高 */
 }
 
 .white-badge-box .white-badge {
     width: 400px;
-    height: 80px;
+    height: 90px;
     display: block;
 }
 
