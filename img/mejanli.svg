@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66.1683332" height="19.5" viewBox="0 0 66.1683332 19.5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 6</title>
+    <defs>
+        <linearGradient x1="-7.16471116%" y1="47.7142784%" x2="104.465827%" y2="51.8576933%" id="linearGradient-1">
+            <stop stop-color="#74CDFF" stop-opacity="0.12" offset="0%"></stop>
+            <stop stop-color="#1662F5" stop-opacity="0.22" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="院校端-首页移动端4.28" transform="translate(-15.000000, -203.000000)">
+            <g id="编组-6" transform="translate(15.000000, 203.000000)">
+                <path d="M6,6 C7.65808617,11.3333333 10.9365813,14 15.8354855,14 C23.1838417,14 25.3825227,6 33.1137675,6 C40.8450124,6 36.442704,14 45.3536686,14 C51.2943116,14 56.3991326,11.3333333 60.6681316,6" id="路径-5备份" stroke="url(#linearGradient-1)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"></path>
+                <text id="我的简历" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" line-spacing="16" fill="#333333">
+                    <tspan x="0" y="17">我的简历</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

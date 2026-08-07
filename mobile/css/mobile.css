@@ -1,8 +1,10 @@
 /* 移动端样式 */
 /* 依赖 js 给 body 加的 is-mobile / is-pc 类 */
+/* 视口单位基准 375×812 (iPhone X): 1dp = 0.2667vw = 0.1232vh */
 
 /* 限制左右滑动：只允许纵向滚动 */
 body.is-mobile {
+    margin: 0;
     overflow-x: hidden;
     touch-action: pan-y;
 }
@@ -16,13 +18,126 @@ body.is-mobile > *:not(.mobile-only) {
 }
 
 body.is-mobile .mobile-only {
+    position: relative;
+    width: 100vw; /* vertical-rl 会让块收缩到内容宽，必须撑满 */
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     font-family: PingFangSC, "PingFang SC";
-    font-size: 80px;
+    font-size: 9.85vh; /* 80dp */
     font-weight: 700;
     color: #0C5BF5;
     writing-mode: vertical-rl; /* 竖排 */
 }
+
+/* 顶部背景：渐变 #d7edf8 → #fff，高 150dp */
+body.is-mobile .mobile-top-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 18.47vh; /* 150dp */
+    background: linear-gradient(180deg, #d7edf8, #ffffff);
+}
+
+/* 学校 logo：水平居中，距手机顶部 45dp */
+body.is-mobile .mobile-school {
+    position: absolute;
+    top: 5.54vh; /* 45dp */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 卡片 + mejanli 包裹层：水平居中，左缘对齐 = 首卡左缘 */
+body.is-mobile .mobile-main {
+    position: absolute;
+    top: calc(5.54vh + 5.05vh + 2.34vh); /* 45+41+19 dp */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    writing-mode: horizontal-tb; /* 父级 vertical-rl 会继承，需复位成横排 */
+}
+
+/* 3 张功能卡：并排，距校徽 19dp（45 顶距 + 41 校徽高 + 19 间距） */
+body.is-mobile .mobile-cards {
+    display: flex;
+    gap: 2.67vw; /* 10dp */
+}
+
+body.is-mobile .mcard {
+    width: 28.80vw; /* 108dp */
+    height: 9.61vh; /* 78dp */
+    border-radius: 2.13vw; /* 8dp */
+    border: 1px solid #ffffff;
+    box-shadow: 0 0 4px rgba(17, 17, 17, 0.07); /* #14111111 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.74vh; /* 6dp */
+    overflow: hidden; /* 文字溢出不外泄，防夸克布局崩 */
+}
+
+body.is-mobile .mcard img {
+    width: 8.53vw; /* 32dp */
+    height: 3.94vh; /* 32dp */
+}
+
+body.is-mobile .mcard span {
+    font-family: PingFangSC, "PingFang SC";
+    font-size: 3.73vw; /* 14dp，随宽缩放 */
+    color: #333333;
+    text-align: center;
+    white-space: nowrap;
+}
+
+body.is-mobile .mcard:nth-child(1) span { width: 14.93vw; } /* 56dp */
+body.is-mobile .mcard:nth-child(2) span { width: 14.93vw; } /* 56dp */
+body.is-mobile .mcard:nth-child(3) span { width: 18.67vw; } /* 70dp */
+
+/* 白框容器：345×70dp 白底圆角，卡片下方 9dp；内放 mejanli + 全部 + 箭头 */
+body.is-mobile .mobile-bottom-row {
+    margin-top: 2.40vw; /* 9dp */
+    width: 92vw; /* 345dp = 345/375×100 */
+    height: 8.62vh; /* 70dp = 70/812×100 */
+    background: #ffffff;
+    border-radius: 1.07vw; /* 4dp */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.08); /* #14000000 */
+    display: flex;
+    align-items: center;
+    padding: 0 4vw; /* 左右 15dp */
+    box-sizing: border-box;
+    align-self: center;
+}
+
+body.is-mobile .mobile-mejanli {
+    margin: 0;
+    margin-right: auto; /* 把右侧的 全部+箭头 推到最右 */
+    width: 17.65vw; /* 66.17dp */
+    height: auto;
+}
+
+/* 全部：TextView 24×12dp，#666666，12sp，距箭头（右侧边框）9dp */
+body.is-mobile .mobile-all {
+    font-family: PingFangSC, "PingFang SC";
+    font-size: 3.20vw; /* 12dp */
+    color: #666666;
+    width: 6.40vw; /* 24dp = 24/375×100 */
+    height: 3.20vw; /* 12dp */
+    line-height: 3.20vw;
+    text-align: center;
+    white-space: nowrap;
+    margin-right: 2.40vw; /* 9dp */
+}
+
+body.is-mobile .mobile-arrow {
+    height: 1.23vh; /* 10dp */
+    width: auto;
+}
+
+body.is-mobile .mcard.blue   { background: linear-gradient(180deg, #d9eaff, #f4faff); }
+body.is-mobile .mcard.cyan   { background: linear-gradient(180deg, #d2f4fd, #edfcff); }
+body.is-mobile .mcard.orange { background: linear-gradient(180deg, #ffe6dc, #fffcfb); }
