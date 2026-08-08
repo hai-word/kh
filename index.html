@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>神笔简历</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./mobile/css/mobile.css">
+    <link rel="stylesheet" href="./mobile/css/mobile.css?v=27">
     <script src="./js/videos.js" defer></script>
     <script src="./js/index.js" defer></script>
-    <script src="./mobile/js/mobile.js" defer></script>
+    <script src="./mobile/js/mobile.js?v=3" defer></script>
 
 </head>
 <body>
@@ -177,21 +178,85 @@
     <div class="float-btn float-btn-top"><canvas class="float-canvas" width="70" height="70"></canvas><img src="./img/zaixiankefu.png" alt=""><span>在线客服</span></div>
     <div class="float-btn float-btn-top2"><canvas class="float-canvas" width="70" height="70"></canvas><img src="./img/kefuzixun.png" alt=""><span>客服咨询</span></div>
 
+
+    
     <div class="mobile-only">
-        <div class="mobile-top-bg"></div>
-        <img class="mobile-school" src="./img/school.png" alt="学校">
+        <div class="mobile-page page-ai active">
+            <div class="mobile-top-bg"></div>
+            <img class="mobile-school" src="./img/school.png" alt="学校">
+
+        
         <div class="mobile-main">
             <div class="mobile-cards">
-                <div class="mcard blue"><img src="./img/zhixie.svg" alt=""><span>简历智写</span></div>
-                <div class="mcard cyan"><img src="./img/youhua.svg" alt=""><span>简历优化</span></div>
-                <div class="mcard orange"><img src="./img/zijianxin.svg" alt=""><span>求职自荐信</span></div>
+                <div class="mcard blue"><img src="./img/mobile/zhixie.svg" alt=""><span>简历智写</span></div>
+                <div class="mcard cyan"><img src="./img/mobile/youhua.svg" alt=""><span>简历优化</span></div>
+                <div class="mcard orange"><img src="./img/mobile/zijianxin.svg" alt=""><span>求职自荐信</span></div>
             </div>
             <div class="mobile-bottom-row">
                 <img class="mobile-mejanli" src="./img/mejanli.svg" alt="">
                 <span class="mobile-all">全部</span>
                 <img class="mobile-arrow" src="./img/right-arrow.svg" alt="">
             </div>
+            <div class="mobile-white-box">
+                <img class="wb-icon" src="./img/mobile/xinjian-fanbai.svg" alt="">
+                <span class="wb-text">一键创建/导入简历</span>
+            </div>
+            <div class="mobile-indicator">
+                <i></i><i></i><i></i>
+            </div>
+            <img class="mobile-zhichang" src="./img/mobile/zhichangbibei.svg" alt="">
+            <div class="mobile-tools">
+                <div class="mtool">
+                    <img src="./img/mobile/tools/tool1.png" alt="">
+                    <span>岗位面试题</span>
+                </div>
+                <div class="mtool">
+                    <img src="./img/mobile/tools/tool2.png" alt="">
+                    <span class="b">AI模拟面试</span>
+                </div>
+                <div class="mtool">
+                    <img src="./img/mobile/tools/tool3.png" alt="">
+                    <span class="r">简历面试题</span>
+                </div>
+                <div class="mtool">
+                    <img src="./img/mobile/tools/tool4.png" alt="">
+                    <span class="g">招聘要求<br>面试题</span>
+                </div>
+                <div class="mtool">
+                    <img src="./img/mobile/tools/tool5.png" alt="">
+                    <span class="c">考研面试题</span>
+                </div>
+                <div class="mtool">
+                    <img src="./img/mobile/tools/tool6.png" alt="">
+                    <span class="p">考公面试题</span>
+                </div>
+                <div class="mtool t7">
+                    <img src="./img/mobile/tools/tool7.png" alt="">
+                    <span>不同企业或职位<br>Offer选择</span>
+                </div>
+                <div class="mtool t8">
+                    <img src="./img/mobile/tools/tool8.png" alt="">
+                    <span>职场问题解答</span>
+                </div>
+                <div class="mtool t9">
+                    <img src="./img/mobile/tools/tool9.png" alt="">
+                    <span>职场权益援助</span>
+                </div>
+            </div>
+            <img class="mobile-aimianshi" src="./img/mobile/aimianshi.png" alt="">
+            </div>
         </div>
+        <div class="mobile-page page-muban"></div>
+        <div class="mobile-page page-zhizuo"></div>
+        <div class="mobile-page page-kecheng"></div>
+        <div class="mobile-page page-wode"></div>
+    </div>
+    <div class="mobile-bottom-bar">
+        <span data-page="page-muban" data-nor="./img/mobile/bar/mobanBar.svg" data-sel="./img/mobile/bar/mobanBar-select.svg"><img src="./img/mobile/bar/mobanBar.svg" alt="">模板</span>
+        <span data-page="page-zhizuo" data-nor="./img/mobile/bar/zhizuoBar.svg" data-sel="./img/mobile/bar/zhizuoBar-select.svg"><img src="./img/mobile/bar/zhizuoBar.svg" alt="">制作</span>
+        <span class="active" data-page="page-ai" data-nor="./img/mobile/bar/aizhineng.svg" data-sel="./img/mobile/bar/aizhineng-select..svg"><img src="./img/mobile/bar/aizhineng-select..svg" alt="">AI智能</span>
+        <span data-page="page-kecheng" data-nor="./img/mobile/bar/kechengBar.svg" data-sel="./img/mobile/bar/kechengBar-select.svg"><img src="./img/mobile/bar/kechengBar.svg" alt="">课程</span>
+        <span data-page="page-wode" data-nor="./img/mobile/bar/wodebar.svg" data-sel="./img/mobile/bar/wodeBar-select.svg"><img src="./img/mobile/bar/wodebar.svg" alt="">我的</span>
     </div>
 </body>
 </html>

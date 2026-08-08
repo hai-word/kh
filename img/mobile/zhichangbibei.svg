@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="98.5000028" height="19.5" viewBox="0 0 98.5000028 19.5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 3</title>
+    <defs>
+        <linearGradient x1="-5.85642645e-13%" y1="49.2899555%" x2="100%" y2="50.4227771%" id="linearGradient-1">
+            <stop stop-color="#74CDFF" stop-opacity="0.12" offset="0%"></stop>
+            <stop stop-color="#1662F5" stop-opacity="0.22" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="院校端-首页移动端4.28" transform="translate(-15.000000, -323.000000)">
+            <g id="编组-3" transform="translate(15.000000, 323.000000)">
+                <path d="M6,6 C7.65808617,11.3333333 10.9365813,14 15.8354855,14 C23.1838417,14 25.3825227,6 33.1137675,6 C40.8450124,6 36.442704,14 45.3536686,14 C54.2646331,14 53.8042476,6 66.1236603,6 C78.4430731,6 59.1065493,14 71.9505359,14 C80.5131936,14 87.5296816,11.3333333 93,6" id="路径-5" stroke="url(#linearGradient-1)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"></path>
+                <text id="职场必备工具" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" line-spacing="16" fill="#333333">
+                    <tspan x="0" y="17">职场必备工具</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

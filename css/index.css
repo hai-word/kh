@@ -781,6 +781,7 @@
 .badge-box {
     position: relative;
     width: 400px;
+    cursor: pointer; /* 鼠标悬停显示手型 */
 }
 
 .badge-box .badge {

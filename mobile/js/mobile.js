@@ -24,6 +24,42 @@
     detectDevice();
     window.addEventListener('resize', detectDevice);
 
+    // 底部导航栏：选中态切换（图标 + 文字变色）
+    function initBottomBar() {
+        var bar = document.querySelector('.mobile-bottom-bar');
+        if (!bar) return;
+        var items = Array.prototype.slice.call(bar.querySelectorAll('span'));
+        items.forEach(function (span) {
+            span.addEventListener('click', function () {
+                // 全部切回未选中
+                items.forEach(function (s) {
+                    s.classList.remove('active');
+                    var img = s.querySelector('img');
+                    if (s.dataset.nor && img) img.src = s.dataset.nor;
+                });
+                // 当前项切为选中
+                span.classList.add('active');
+                var img = span.querySelector('img');
+                if (span.dataset.sel && img) img.src = span.dataset.sel;
+                // 同页切换内容：显示对应面板，隐藏其他
+                if (span.dataset.page) {
+                    var pages = document.querySelectorAll('.mobile-page');
+                    pages.forEach(function (p) {
+                        p.classList.remove('active');
+                    });
+                    var target = document.querySelector('.' + span.dataset.page);
+                    if (target) target.classList.add('active');
+                }
+            });
+        });
+    }
+    // 页面加载后 DOM 就绪再绑定
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBottomBar);
+    } else {
+        initBottomBar();
+    }
+
     // 兜底：禁止水平滑动（纵向滑动保留）
     var startX = null;
     var startY = null;
