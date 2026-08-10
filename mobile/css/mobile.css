@@ -425,18 +425,12 @@ body.is-mobile .mobile-bottom-bar span img {
 .m-sheet-item + .m-sheet-item {
   border-top: 0.13vw solid #eeeeee; /* 0.5dp 两按钮间分隔线 */
 }
-/* 底弹层滑入/滑出（覆盖 Swal 默认缩放动画） */
+/* 底弹层显示/关闭：禁用 transform 滑入动画。
+   DevTools 设备模拟/渲染节流会冻结 CSS 动画在 from 态（translateY(100%)），
+   弹层会被推到屏幕下方不可见。改纯显隐，任何环境都保证可见。 */
 .m-sheet-pop.swal2-show {
-  animation: mSheetIn 0.3s ease;
+  animation: none !important;
 }
 .m-sheet-pop.swal2-hide {
-  animation: mSheetOut 0.25s ease;
-}
-@keyframes mSheetIn {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
-}
-@keyframes mSheetOut {
-  from { transform: translateY(0); }
-  to { transform: translateY(100%); }
+  animation: none !important;
 }
