@@ -7,6 +7,7 @@
     if (window.innerWidth <= 768 || (uaMobile && touch) || (touch && coarse)) {
         return;
     }
+    //----------end----------------
 
     // 防止幽灵图像拖拽：所有图片禁止拖动
     // document.querySelectorAll('img').forEach(function (img) {
@@ -118,11 +119,7 @@
         });
     });
 
-    var track = document.querySelector('.carousel-track');
-    var prevBtn = document.querySelector('.carousel-arrow.prev');
-    var nextBtn = document.querySelector('.carousel-arrow.next');
-    var carousel = document.querySelector('.carousel');
-    var indicators = document.querySelectorAll('.indicator');
+
 
     // 视频窗口加载配置里的第一个视频地址
     var videoPlayer = document.querySelector('.video-player');
@@ -208,8 +205,17 @@
         });
     });
 
+
+    var track = document.querySelector('.carousel-track');          //图片的img元素
+    var prevBtn = document.querySelector('.carousel-arrow.prev');   //轮播图的切换上一站的
+    var nextBtn = document.querySelector('.carousel-arrow.next');   //轮播图的切换下一站的
+    var carousel = document.querySelector('.carousel');            //轮播图的整个框架的获取
+    var indicators = document.querySelectorAll('.indicator');     //获取轮播图的btn方式的切换图的btn
+
+    //轮播图区域的代码
     // null 守卫，元素缺失直接退出
     if (!track || !prevBtn || !nextBtn || !track.children.length) return;
+    // if (1) return;
 
     // 克隆第一张到末尾，实现无缝循环：最后一张滑到克隆图，动画结束再隐形切回真实第一张
     track.appendChild(track.children[0].cloneNode(true));
@@ -217,8 +223,8 @@
     var total = track.children.length;   // 含克隆
     var realCount = total - 1;           // 真实轮播数
     var pos = 0;                         // 视觉位置 0..total-1
-    var timer = null;
-    var hovering = false;
+    var timer = null;        // 自动播放的定时器，interval 的句柄
+    var hovering = false;    // 鼠标是否悬停（悬停时暂停自动播放）
 
     function setTransform() {
         track.style.transform = 'translateX(-' + (pos * 100) + '%)';
@@ -277,7 +283,7 @@
     // 自动播放：每 1 秒切下一张；悬停暂停
     function startAuto() {
         stopAuto();
-        if (hovering) return;
+        if (hovering) return;      //第二层暂停策略
         timer = setInterval(function () {
             goNext();
         }, 1000);
@@ -317,7 +323,7 @@
     // 悬停暂停自动播放
     if (carousel) {
         carousel.addEventListener('mouseenter', function () {
-            hovering = true;
+            hovering = true;       //第一成暂停
             stopAuto();
         });
         carousel.addEventListener('mouseleave', function () {
@@ -332,3 +338,9 @@
     // 启动自动播放
     startAuto();
 })();
+
+
+
+
+
+
