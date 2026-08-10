@@ -60,7 +60,7 @@
     function initResumeSheet() {
         var box = document.querySelector('.mobile-white-box');
         var fileInput = document.getElementById('mResumeFile');
-        if (!box || !fileInput) return;
+        if (!box || !fileInput || typeof Swal === 'undefined') return;
 
         var toast = Swal.mixin({
             toast: true,

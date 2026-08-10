@@ -415,11 +415,28 @@ body.is-mobile .mobile-bottom-bar span img {
   height: 5.91vh; /* 48dp */
   margin: 0 auto;
   border: 0;
-  border-top: 0.13vw solid #eeeeee; /* 0.5dp 分隔线 */
   background: transparent;
   font-size: 4.27vw; /* 16dp */
   color: #1662f5;
   line-height: 5.91vh;
   text-align: center;
   cursor: pointer;
+}
+.m-sheet-item + .m-sheet-item {
+  border-top: 0.13vw solid #eeeeee; /* 0.5dp 两按钮间分隔线 */
+}
+/* 底弹层滑入/滑出（覆盖 Swal 默认缩放动画） */
+.m-sheet-pop.swal2-show {
+  animation: mSheetIn 0.3s ease;
+}
+.m-sheet-pop.swal2-hide {
+  animation: mSheetOut 0.25s ease;
+}
+@keyframes mSheetIn {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+@keyframes mSheetOut {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); }
 }
