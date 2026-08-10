@@ -75,25 +75,26 @@
                 title: '选择操作',
                 heightAuto: false, // 防 Swal 给 body 加 swal2-height-auto（height:auto!important）塌掉 100dvh 布局
                 html: '<button type="button" class="m-sheet-item" id="mActCreate">创建简历</button>' +
-                      // label for 指向隐藏文件框：点击由浏览器原生转发，手势不丢，文件框必弹
-                      '<label class="m-sheet-item" id="mActImport" for="mResumeFile">导入简历</label>',
+                      '<button type="button" class="m-sheet-item" id="mActImport">导入简历</button>',
                 showCloseButton: true,
                 showConfirmButton: false,
                 customClass: { popup: 'm-sheet-pop' },
                 didOpen: function () {
                     var createBtn = document.getElementById('mActCreate');
-                    var importLabel = document.getElementById('mActImport');
+                    var importBtn = document.getElementById('mActImport');
                     if (createBtn) {
                         createBtn.addEventListener('click', function () {
                             Swal.close();
                             toast.fire({ icon: 'info', title: '功能开发中' });
                         });
                     }
-                    if (importLabel) {
-                        importLabel.addEventListener('click', function () {
-                            // 仅关层 + 重置，文件选择由 label 原生触发
-                            Swal.close();
+                    if (importBtn) {
+                        importBtn.addEventListener('click', function () {
+                            // 清空上次选择 + 关层；文件框用 setTimeout 延时触发，
+                            // 用户手势（transient activation）保留，真机必弹文件选择器
                             fileInput.value = '';
+                            Swal.close();
+                            setTimeout(function () { fileInput.click(); }, 0);
                         });
                     }
                 }
