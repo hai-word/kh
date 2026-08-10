@@ -425,6 +425,32 @@ body.is-mobile .mobile-bottom-bar span img {
 .m-sheet-item + .m-sheet-item {
   border-top: 0.13vw solid #eeeeee; /* 0.5dp 两按钮间分隔线 */
 }
+/* 右上关闭叉：小圆钮浅灰底，去 Swal 默认大 × */
+.m-sheet-pop .swal2-close {
+  position: absolute;
+  top: 2.13vw;    /* 8dp */
+  right: 2.13vw;  /* 8dp */
+  width: 8.53vw;  /* 32dp */
+  height: 8.53vw; /* 32dp */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05); /* 浅灰圆底 */
+  color: #999999;
+  font-size: 4vw; /* 15dp × 图标 */
+  font-weight: 400;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.m-sheet-pop .swal2-close:hover,
+.m-sheet-pop .swal2-close:active {
+  background: rgba(0, 0, 0, 0.09);
+  color: #666666;
+}
 /* 底弹层显示/关闭：禁用 transform 滑入动画。
    DevTools 设备模拟/渲染节流会冻结 CSS 动画在 from 态（translateY(100%)），
    弹层会被推到屏幕下方不可见。改纯显隐，任何环境都保证可见。 */
