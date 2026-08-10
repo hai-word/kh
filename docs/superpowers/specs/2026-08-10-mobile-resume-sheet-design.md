@@ -7,6 +7,15 @@
 
 移动端首页（page-ai）白色盒子"一键创建/导入简历"目前无交互。点击后弹出底部操作层，提供"创建简历 / 导入简历"两个入口。项目为静态演示页，无后端，功能为 UI 反馈级别。
 
+## 白盒视觉规格（Android 原版 spec 转 vw/vh）
+
+`#mResumeFile` 所在的白盒 `.mobile-white-box`（点击入口）改成原版规格:
+- 尺寸 345×70dp → `width:92vw; height:8.62vh`（现高 9.58vh 过大，改 8.62vh）
+- 白底 `#ffffffff`
+- 圆角 4dp → `border-radius:1.07vw`
+- 阴影 `#14000000`（8% 黑）dx=0 dy=0 → `box-shadow: 0 0 0.8vw rgba(0,0,0,0.08)`
+- 图标 `wb-icon` src 从 `./img/mobile/xinjian-fanbai.svg` **换成 `./img/mobile/file.svg`**（文件已存在）
+
 ## 依赖
 
 引入 **SweetAlert2 v11**（CDN，单 JS + 单 CSS，零依赖，无需构建）:
