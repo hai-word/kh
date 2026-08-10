@@ -1,10 +1,7 @@
 (function () {
     // 移动端：PC 内容隐藏，跳过全部 PC 逻辑（视频/轮播/徽标等），零网络请求
-    var ua = navigator.userAgent || '';
-    var uaMobile = /Android|iPhone|iPod|iPad|Windows Phone|webOS|BlackBerry|Mobile|HarmonyOS/i.test(ua);
-    var touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    var coarse = !!(window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
-    if (window.innerWidth <= 768 || (uaMobile && touch) || (touch && coarse)) {
+    // IS_MOBILE 由 index.html 内联脚本统一识别
+    if (window.IS_MOBILE) {
         return;
     }
     //----------end----------------
@@ -131,7 +128,9 @@
     var badgeBoxes = document.querySelectorAll('.badge-box');
     badgeBoxes.forEach(function (box) {
         box.addEventListener('click', function () {
-            badgeBoxes.forEach(function (b) { b.classList.remove('selected'); });
+            badgeBoxes.forEach(function (b) {
+                b.classList.remove('selected');
+            });
             box.classList.add('selected');
             badgeBoxes.forEach(function (b) {
                 var img = b.querySelector('.badge');

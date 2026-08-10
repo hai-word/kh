@@ -783,6 +783,11 @@
     cursor: pointer; /* 鼠标悬停显示手型 */
 }
 
+.cta-box {
+    cursor: pointer; /* 鼠标悬停显示手型 */
+
+}
+
 .badge-box .badge {
     width: 400px;
     display: block;

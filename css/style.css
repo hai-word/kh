@@ -9,6 +9,10 @@ a {
   color: #2266cc;
 }
 
+html {
+    overflow-x: hidden; /* 页面级禁横向滚动，防止设备切换竞态时 PC 内容横向溢出 */
+}
+
 body {
     margin: 0; /* 清除浏览器默认的 8px 边距 */
     width: 100%;
