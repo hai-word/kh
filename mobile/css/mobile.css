@@ -23,7 +23,7 @@ body.is-mobile {
     display: none;
 }
 
-body.is-mobile > *:not(.mobile-only):not(.mobile-bottom-bar) {
+body.is-mobile > *:not(.mobile-only):not(.mobile-bottom-bar):not(.swal2-container) {
     display: none;
 }
 

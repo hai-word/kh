@@ -73,6 +73,7 @@
             Swal.fire({
                 position: 'bottom',
                 title: '选择操作',
+                heightAuto: false, // 防 Swal 给 body 加 swal2-height-auto（height:auto!important）塌掉 100dvh 布局
                 html: '<button type="button" class="m-sheet-item" id="mActCreate">创建简历</button>' +
                       // label for 指向隐藏文件框：点击由浏览器原生转发，手势不丢，文件框必弹
                       '<label class="m-sheet-item" id="mActImport" for="mResumeFile">导入简历</label>',
