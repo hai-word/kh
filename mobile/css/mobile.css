@@ -167,11 +167,14 @@ body.is-mobile .mcard.orange { background: linear-gradient(180deg, #ffe6dc, #fff
 
 .mobile-main .mobile-white-box {
   width: 92vw;
-  height: 8.62vh; /* 70dp */
+  height: 9.58vh;
   background-color: #ffffffff;
-  border-radius: 1.07vw; /* 4dp */
+  border-radius: 1.07vw;
   /* 距离顶部9dp */
   margin-top: 2.4vw;
+  background-image: url("../../img/mobile/downJiantou.png");
+  background-repeat: no-repeat; /* 只显示1张，禁止重复 */
+  background-position: 7vw center; /* 雪花偏左，整体右移 15dp = 15/375×100 */
   box-shadow: 0 0 0.8vw rgba(0, 0, 0, 0.08);
   display: flex; /* 图标+文字水平居中 */
   align-items: center;
@@ -195,6 +198,12 @@ body.is-mobile .mcard.orange { background: linear-gradient(180deg, #ffe6dc, #fff
   line-height: 3.73vw;
   white-space: nowrap;
   text-align: center;
+}
+
+/* 导入后：白盒文字变文件名，TextView 54×14dp，#333333，14sp */
+.mobile-main .mobile-white-box .wb-text.filename {
+  width: 14.4vw; /* 54dp = 54/375×100 */
+  color: #333333;
 }
 
 /* 指示条：44×6dp，白盒与职场必备中间，水平居中；3 元素 space-between → 间隙 10dp */
@@ -436,8 +445,7 @@ body.is-mobile .mobile-bottom-bar span img {
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.05); /* 浅灰圆底 */
-  color: #999999;
+  color: #000;
   font-size: 4vw; /* 15dp × 图标 */
   font-weight: 400;
   line-height: 1;

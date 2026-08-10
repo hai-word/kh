@@ -103,6 +103,12 @@
 
         fileInput.addEventListener('change', function () {
             var name = fileInput.files && fileInput.files[0] ? fileInput.files[0].name : '文件';
+            // 白盒文字变文件名（TextView 54×14dp #333333 14sp）
+            var textEl = document.querySelector('.mobile-white-box .wb-text');
+            if (textEl) {
+                textEl.textContent = name;
+                textEl.classList.add('filename');
+            }
             toast.fire({ icon: 'success', title: '已收到简历：' + name });
         });
     }
