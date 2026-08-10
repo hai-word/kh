@@ -206,6 +206,13 @@ body.is-mobile .mcard.orange { background: linear-gradient(180deg, #ffe6dc, #fff
   color: #333333;
 }
 
+/* 导入后布局：图标靠左 24dp，文字在其右 17dp（图标尺寸不变） */
+.mobile-main .mobile-white-box.imported {
+  justify-content: flex-start; /* 不再居中，靠左排 */
+  padding-left: 6.4vw; /* 24dp = 24/375×100 */
+  gap: 4.53vw; /* 17dp = 17/375×100 */
+}
+
 /* 指示条：44×6dp，白盒与职场必备中间，水平居中；3 元素 space-between → 间隙 10dp */
 .mobile-main .mobile-indicator {
     margin-top: 2.4vw; /* 9dp */
