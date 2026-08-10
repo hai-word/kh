@@ -4,18 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>神笔简历</title>
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="./img/favicon.png">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./mobile/css/mobile.css?v=29">
+    <link rel="stylesheet" href="./mobile/css/mobile.css">
+    <!-- SweetAlert2：移动端底弹层 + toast -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
     <script src="./js/videos.js" defer></script>
     <script src="./js/index.js" defer></script>
-    <script src="./mobile/js/mobile.js?v=3" defer></script>
+    <script src="./mobile/js/mobile.js" defer></script>
 
 </head>
 <body>
-    <!-- pc端的网页布局的内容 -->
+    <!-- 设备识别：PC/移动端统一判断，js/index.js 与 mobile/js/mobile.js 共用 -->
+    <script>
+        // 加载时执行一次，resize 时重新识别（支持 DevTools 设备模拟器切换）
+        window.detectDevice = function () {
+            var ua = navigator.userAgent || '';
+            window.IS_MOBILE = /Android|iPhone|iPod|iPad|Windows Phone|webOS|BlackBerry|Mobile|HarmonyOS/i.test(ua);
+            window.IS_PC = !window.IS_MOBILE;
+            // body + html 都打类：mobile.css 用 is-mobile 挂样式（禁横向滚动等）
+            document.body.classList.toggle('is-mobile', window.IS_MOBILE);
+            document.body.classList.toggle('is-pc', window.IS_PC);
+            document.documentElement.classList.toggle('is-mobile', window.IS_MOBILE);
+            document.documentElement.classList.toggle('is-pc', window.IS_PC);
+        };
+        window.detectDevice();
+        window.addEventListener('resize', function () {
+            // DevTools 设备切换时 resize 可能先于 UA 更新触发（读到旧 UA）。
+            // 立即重算 + 延迟重查兜底，避免第一次切换后 PC/移动布局错位。
+            window.detectDevice();
+            clearTimeout(window.__detectTimer);
+            window.__detectTimer = setTimeout(window.detectDevice, 300);
+        });
+    </script>
 
+    <!-- pc端的网页布局的内容 -->
     <!-- 这是顶部导航栏 -->
     <nav class="site-nav">
         <!-- <div class="jianliLoge">简历图片</div>
@@ -206,8 +231,6 @@
         <div class="mobile-page page-ai active">
             <div class="mobile-top-bg"></div>
             <img class="mobile-school" src="./img/school.png" alt="学校">
-
-        
             <div class="mobile-main">
                 <div class="mobile-cards">
                     <div class="mcard blue"><img src="./img/mobile/zhixie.svg" alt=""><span>简历智写</span></div>
@@ -220,7 +243,7 @@
                     <img class="mobile-arrow" src="./img/right-arrow.svg" alt="">
                 </div>
                 <div class="mobile-white-box">
-                    <img class="wb-icon" src="./img/mobile/xinjian-fanbai.svg" alt="">
+                    <img class="wb-icon" src="./img/mobile/file.svg" alt="">
                     <span class="wb-text">一键创建/导入简历</span>
                 </div>
                 <div class="mobile-indicator">
@@ -272,6 +295,8 @@
         <div class="mobile-page page-zhizuo"></div>
         <div class="mobile-page page-kecheng"></div>
         <div class="mobile-page page-wode"></div>
+        <!-- 导入简历：隐藏文件选择 -->
+        <input type="file" id="mResumeFile" accept=".pdf,.doc,.docx" hidden>
     </div>
     <div class="mobile-bottom-bar">
         <span data-page="page-muban" data-nor="./img/mobile/bar/mobanBar.svg" data-sel="./img/mobile/bar/mobanBar-select.svg"><img src="./img/mobile/bar/mobanBar.svg" alt="">模板</span>
