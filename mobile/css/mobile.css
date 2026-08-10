@@ -3,6 +3,11 @@
 /* 视口单位基准 375×812 (iPhone X): 1dp = 0.2667vw = 0.1232vh */
 
 /* 限制左右滑动：只允许纵向滚动 */
+html.is-mobile {
+    overflow-x: hidden;          /* 页面级禁横向滚动/回弹 */
+    overscroll-behavior-x: none; /* Chrome/Android/Edge 禁横向回弹 */
+}
+
 body.is-mobile {
     margin: 0;
     height: 100vh;
@@ -10,6 +15,7 @@ body.is-mobile {
     display: flex;
     flex-direction: column;
     overflow: hidden; /* body 自身不滚，滚动区交给 mobile-only */
+    overscroll-behavior-x: none; /* 防横向回弹冒泡 */
     touch-action: pan-y;
 }
 
@@ -28,6 +34,7 @@ body.is-mobile .mobile-only {
     min-height: 0;
     width: 100vw;
     overflow-y: auto; /* 内容滚动区，与底部导航分离 */
+    overflow-x: hidden; /* 关键：杀横向滚动轴，iOS 无轴可回弹 */
     font-family: PingFangSC, "PingFang SC";
     writing-mode: horizontal-tb; /* 竖排文字已删，复位横排 */
 }
@@ -160,14 +167,11 @@ body.is-mobile .mcard.orange { background: linear-gradient(180deg, #ffe6dc, #fff
 
 .mobile-main .mobile-white-box {
   width: 92vw;
-  height: 9.58vh;
+  height: 8.62vh; /* 70dp */
   background-color: #ffffffff;
-  border-radius: 1.07vw;
+  border-radius: 1.07vw; /* 4dp */
   /* 距离顶部9dp */
   margin-top: 2.4vw;
-  background-image: url("../../img/mobile/downJiantou.png");
-  background-repeat: no-repeat; /* 只显示1张，禁止重复 */
-  background-position: 7vw center; /* 雪花偏左，整体右移 15dp = 15/375×100 */
   box-shadow: 0 0 0.8vw rgba(0, 0, 0, 0.08);
   display: flex; /* 图标+文字水平居中 */
   align-items: center;
@@ -203,7 +207,7 @@ body.is-mobile .mcard.orange { background: linear-gradient(180deg, #ffe6dc, #fff
     align-items: center;
     align-self: center; /* 水平居中 */
 }
-.mobile-main .mobile-indicator i { display: block; }
+.mobile-main .mobile-indicator i { display: block; border-radius: 1vh;}
 .mobile-main .mobile-indicator i:nth-child(1) {
     width: 3.20vw; /* 12dp */
     height: 1.60vw; /* 6dp */
@@ -386,4 +390,36 @@ body.is-mobile .mobile-bottom-bar span.active {
 body.is-mobile .mobile-bottom-bar span img {
   width: 5.33vw; /* 20dp */
   height: 5.87vw; /* 22dp */
+}
+
+/* SweetAlert2 底弹层：底部面板 */
+.m-sheet-pop {
+  width: 100vw !important;
+  margin: 0 !important;
+  border-radius: 3.2vw 3.2vw 0 0 !important; /* 12dp 顶圆角 */
+  padding: 2.67vw 0 3.2vw !important; /* 10dp 上，12dp 下 */
+}
+.m-sheet-pop .swal2-title {
+  margin: 0 0 1.33vw; /* 下 5dp */
+  font-size: 4.27vw; /* 16dp */
+  color: #333333;
+}
+.m-sheet-pop .swal2-html-container {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.m-sheet-item {
+  display: block;
+  width: 92vw; /* 345dp */
+  height: 5.91vh; /* 48dp */
+  margin: 0 auto;
+  border: 0;
+  border-top: 0.13vw solid #eeeeee; /* 0.5dp 分隔线 */
+  background: transparent;
+  font-size: 4.27vw; /* 16dp */
+  color: #1662f5;
+  line-height: 5.91vh;
+  text-align: center;
+  cursor: pointer;
 }
