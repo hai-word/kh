@@ -206,16 +206,22 @@ body.is-mobile .mcard.orange { background: linear-gradient(180deg, #ffe6dc, #fff
   color: #333333;
 }
 
-/* 导入后布局：图标靠左 24dp，文字在其右 17dp */
+/* 导入后布局：图标靠左 24dp 垂直居中 */
 .mobile-main .mobile-white-box.imported {
-  justify-content: flex-start; /* 不再居中，靠左排 */
+  position: relative; /* 文字绝对定位的锚点 */
+  justify-content: flex-start;
   padding-left: 6.4vw; /* 24dp = 24/375×100 */
-  gap: 4.53vw; /* 17dp = 17/375×100 */
 }
 /* 导入后 file 图标：40×50dp */
 .mobile-main .mobile-white-box.imported .wb-icon {
   width: 10.67vw; /* 40dp = 40/375×100 */
   height: 6.16vh; /* 50dp = 50/812×100 */
+}
+/* 导入后文字：距上边框 18dp、左边框 81dp */
+.mobile-main .mobile-white-box.imported .wb-text.filename {
+  position: absolute;
+  top: 2.22vh;  /* 18dp = 18/812×100 */
+  left: 21.6vw; /* 81dp = 81/375×100 */
 }
 
 /* 指示条：44×6dp，白盒与职场必备中间，水平居中；3 元素 space-between → 间隙 10dp */
