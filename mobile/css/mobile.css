@@ -40,6 +40,14 @@ body.is-mobile .mobile-page {
 body.is-mobile .mobile-page.active {
     display: block;
 }
+/* 模板页：内容在面板内居中 */
+body.is-mobile .mobile-page.page-muban.active {
+    display: flex;
+    align-items: center;    /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    min-height: 100%;       /* 至少撑满滚动区 */
+    text-align: center;
+}
 
 /* 顶部背景：渐变 #d7edf8 → #fff，高 150dp */
 body.is-mobile .mobile-top-bg {
@@ -340,7 +348,12 @@ body.is-mobile .mcard.orange { background: linear-gradient(180deg, #ffe6dc, #fff
   height: auto;
 }
 
-/* 底部导航栏：375×74dp，flex 布局下与滚动区分开，物理上不随内容滚 */
+/* 底部导航栏：PC 隐藏，仅移动端显示 */
+.mobile-bottom-bar {
+    display: none;
+}
+
+/* 移动端：375×74dp，flex 布局下与滚动区分开，物理上不随内容滚 */
 body.is-mobile .mobile-bottom-bar {
   flex-shrink: 0;
   width: 100vw;

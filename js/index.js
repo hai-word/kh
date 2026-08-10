@@ -9,9 +9,9 @@
     }
 
     // 防止幽灵图像拖拽：所有图片禁止拖动
-    document.querySelectorAll('img').forEach(function (img) {
-        img.setAttribute('draggable', 'false');
-    });
+    // document.querySelectorAll('img').forEach(function (img) {
+    //     img.setAttribute('draggable', 'false');
+    // });
 
     // 生成 n 个随机颜色
     function getRandomColors(n) {

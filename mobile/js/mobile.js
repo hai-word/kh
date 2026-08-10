@@ -27,6 +27,8 @@
     // 底部导航栏：选中态切换（图标 + 文字变色）
     function initBottomBar() {
         var bar = document.querySelector('.mobile-bottom-bar');
+        console.log('bar.querySelectorAll(\'span\')',bar.querySelectorAll('span'));
+        
         if (!bar) return;
         var items = Array.prototype.slice.call(bar.querySelectorAll('span'));
         items.forEach(function (span) {

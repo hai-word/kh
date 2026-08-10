@@ -659,11 +659,11 @@
     white-space: nowrap;
 }
 
-.float-btn-top {
+.float-kefu {
     bottom: 240px; /* 上方 10px：160 + 70 + 10 */
 }
 
-.float-btn-top2 {
+.float-kefuzixun {
     bottom: 320px; /* 再上方 10px：240 + 70 + 10 */
 }
 
@@ -704,7 +704,6 @@
 /* 面试/职场面板视频：居中 */
 .centered-video {
     left: 50%;
-    right: auto;
     transform: translateX(-50%);
     width: 780px;
     height: 438px;
